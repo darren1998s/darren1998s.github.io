@@ -129,7 +129,7 @@ print(f"pp = {n_pp}, qq = {n_qq},pq = {n_pq}")
 
 ### Relaxing the selection assumption
 
-In order to simulate the environment turning black, where the black-bodied moths (A<sub>1</sub>A<sub>1</sub> and A<sub>1</sub>A<sub>2</sub>) are favored to survive over the white-bodied mo|ths (A<sub>2</sub>A<sub>2</sub>). We would need to alter our equations a little bit.
+In order to simulate the environment turning black, where the black-bodied moths (A<sub>1</sub>A<sub>1</sub> and A<sub>1</sub>A<sub>2</sub>) are favored to survive over the white-bodied moths (A<sub>2</sub>A<sub>2</sub>). We would need to alter our equations a little bit.
 
 We would need to add in a `Fitness` parameter to allow our A<sub>2</sub>A<sub>2</sub> moths to not reproduce as well as the rest. `s` is going to be a positive number, the higher `s` is the less able the white-bodied moths are able to reproduce!
 
@@ -380,8 +380,3 @@ print(f'White-bodied moths stabilised at {n_white[i]}')
 With this project, we can see how the famous peppered moth example adadpted to change quickly. In a span of <5 generations, the black moths in the population are the majority! And in a span of 10 generations, the black-bodied moths increased from 1 to 990 and the white-bodied moths decreased from 999 to 10!
 
 Further extensions to this project can be done, such as simulating the population in the event that alleles coding for white bodies were dominant rather than recessive as seen in nature. Moreover, there could be codominance of these alleles where A<sub>1</sub>A<sub>2</sub> produces a grey in between rather than a definite black / white body!
-
-
-```python
-
-```
