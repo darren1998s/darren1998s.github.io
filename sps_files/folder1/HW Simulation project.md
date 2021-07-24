@@ -518,7 +518,7 @@ From our original table:
 | A<sub>1</sub>A<sub>2</sub>| $$2pq$$   |$$\frac{2pq}{p^2 + 2pq + q^2(1-s)}$$|
 | A<sub>2</sub>A<sub>2</sub>| $$q^2(1-s)$$|$$\frac{q^2(1-s)}{p^2 + 2pq + q^2(1-s)}$$|
 
-We assumed only A<sub>2</sub>A<sub>2</sub> and A<sub>2</sub>A<sub>2</sub> have the same fitness values. What if that is not the case? We would need to give each genotype their own fitness values:
+We assumed only A<sub>1</sub>A<sub>1</sub> and A<sub>1</sub>A<sub>2</sub> have the same fitness values. What if that is not the case? We would need to give each genotype their own fitness values:
 
 | Genotype                  |Frequencies after selection|Frequencies after Normalisation|
 |---------------------------| --------- | --------------------------|
