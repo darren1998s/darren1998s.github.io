@@ -9,7 +9,7 @@ This project is going to focus on simulating the famous [peppered moths example 
 1. Before the industrial revolution, these peppered moths were originally white. 
 
 
-2. During the industrial revolution, large amount of population caused the environment to be significantly darker and a large number of these peppered moths were observed to be black.
+2. During the industrial revolution, large amount of pollution caused the environment to be significantly darker and a large number of these peppered moths were observed to be black.
 
 
 3. After the industrial revolution when the pollution was reduced, this white variant of peppered moths emerged again.
@@ -47,7 +47,7 @@ If the frequency of A<sub>1</sub> is p, and frequency of A<sub>2</sub> is q, we 
 - A<sub>1</sub>A<sub>1</sub>
 - A<sub>1</sub>A<sub>2</sub>
 - A<sub>2</sub>A<sub>2</sub>
-|
+
 Because of the 5th point in the Hardy-Weinberg assumptions, each allele would have a set chance in combining with each other. Hence the frequency of the combination of the alleles can be calculated.
 
 - A<sub>1</sub>A<sub>1</sub>: p*p
@@ -110,8 +110,8 @@ $$pq = 1 - p^2 - q^2$$
 
 ```python
 #After 1 generation
-frac_p = (n_pp/1000) + (n_pq/1000)/2
-frac_q = (n_qq/1000) + (n_pq/1000)/2
+frac_p = (n_pp/population_size) + (n_pq/population_size)/2
+frac_q = (n_qq/population_size) + (n_pq/population_size)/2
 
 frac_qq = frac_q*frac_q
 frac_pp = frac_p*frac_p
@@ -129,7 +129,7 @@ print(f"pp = {n_pp}, qq = {n_qq},pq = {n_pq}")
 
 ### Relaxing the selection assumption
 
-In order to simulate the environment turning black, where the black-bodied moths (A<sub>1</sub>A<sub>1</sub> and A<sub>1</sub>A<sub>2</sub>) are favored to survive over the white-bodied mo|ths (A<sub>2</sub>A<sub>2</sub>). We would need to alter our equations a little bit.
+In order to simulate the environment turning black, where the black-bodied moths (A<sub>1</sub>A<sub>1</sub> and A<sub>1</sub>A<sub>2</sub>) are favored to survive over the white-bodied moths (A<sub>2</sub>A<sub>2</sub>). We would need to alter our equations a little bit.
 
 We would need to add in a `Fitness` parameter to allow our A<sub>2</sub>A<sub>2</sub> moths to not reproduce as well as the rest. `s` is going to be a positive number, the higher `s` is the less able the white-bodied moths are able to reproduce!
 
@@ -182,8 +182,8 @@ The way to calculate the allelic frequencies (p and q) are still the same:
 
 ```python
 #After 1 generation
-frac_p = (n_pp/1000) + (n_pq/1000)/2
-frac_q = (n_qq/1000) + (n_pq/1000)/2
+frac_p = (n_pp/population_size) + (n_pq/population_size)/2
+frac_q = (n_qq/population_size) + (n_pq/population_size)/2
 ```
 
 the only thing that changed is the genotype frequencies which was derived in the table above. Let us determine `s` as well, we will just set it to be `0.5` first.
@@ -213,8 +213,8 @@ The above result is not quite right. If we run the code block again
 
 ```python
 #After 1 more generation
-frac_p = (n_pp/1000) + (n_pq/1000)/2
-frac_q = (n_qq/1000) + (n_pq/1000)/2
+frac_p = (n_pp/population_size) + (n_pq/population_size)/2
+frac_q = (n_qq/population_size) + (n_pq/population_size)/2
 
 denominator = 1-(frac_q*frac_q*s)
 
@@ -234,13 +234,13 @@ print(f"pp = {n_pp}, qq = {n_qq},pq = {n_pq}")
 
 The numbers changed again. This is because the system is not yet at equilibrium. We can now plot a time-series graph to show the change in the population over time! In order to simplify our code, a function was made to house the calculations.
 
-The initial values were once again intialised, except that the mass population of moths are white thus `frac_qq = 0.99`. We can increase the death rate of white moths in black environments as well thus `s = 0.8`.
+The initial values were once again intialised, except that the mass population of moths are white thus `frac_qq = 0.999`. We can increase the death rate of white moths in black environments as well thus `s = 0.8`.
 
 
 ```python
 def calculate(n_pp,n_pq,n_qq,s):
-    frac_p = (n_pp/1000) + (n_pq/1000)/2
-    frac_q = (n_qq/1000) + (n_pq/1000)/2
+    frac_p = (n_pp/population_size) + (n_pq/population_size)/2
+    frac_q = (n_qq/population_size) + (n_pq/population_size)/2
 
     denominator = 1-(frac_q*frac_q*s)
 
@@ -306,7 +306,7 @@ plt.show()
 
 
     
-![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_31_0.png)
+![png](output_31_0.png)
     
 
 
@@ -329,7 +329,7 @@ plt.show()
 
 
     
-![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_33_0.png)
+![png](output_33_0.png)
     
 
 
@@ -341,11 +341,11 @@ We can then plot a vertical line in the previous plot to see where it stabilises
 
 
 ```python
-threshold = 5
+threshold = 0.005
 
 for i in range(5,t_max):
     change = n_black[i+1]-n_black[i]
-    if threshold > change:
+    if threshold*population_size > change:
         break
 
         
@@ -358,7 +358,7 @@ plt.xlabel('Generations')
 plt.legend()
 
 #Adding vertical line
-plt.vlines(i, 0,1000, linestyles = 'dashed')
+plt.vlines(i, 0,population_size, linestyles = 'dashed')
 plt.show()
 
 print(f'Population Stabilised at generation {i}')
@@ -368,7 +368,7 @@ print(f'White-bodied moths stabilised at {n_white[i]}')
 
 
     
-![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_35_0.png)
+![png](output_35_0.png)
     
 
 
@@ -383,7 +383,7 @@ To make our lives easier, we can house all the code into yet another function.
 
 
 ```python
-def full_calc(s, frac_qq, frac_pp, population_size = 1000, t_max = 35, dom = 'black body', recc = 'white body'):
+def full_calc(s, frac_qq, frac_pp, population_size = 1000, t_max = 35, dom = 'black body', recc = 'white body', threshold = 0.005):
     n_qq = round(frac_qq*population_size)
     n_pp = round(frac_pp*population_size)
     n_pq = population_size-n_qq-n_pp
@@ -407,7 +407,7 @@ def full_calc(s, frac_qq, frac_pp, population_size = 1000, t_max = 35, dom = 'bl
     
     for i in range(t_max,0,-1):
         change = abs(n_black[i-1]-n_black[i-2])
-        if threshold < change:
+        if threshold*population_size < change:
             break
 
 
@@ -420,7 +420,7 @@ def full_calc(s, frac_qq, frac_pp, population_size = 1000, t_max = 35, dom = 'bl
     plt.legend()
 
     #Adding vertical line
-    plt.vlines(i, 0,1000, linestyles = 'dashed')
+    plt.vlines(i, 0,population_size, linestyles = 'dashed')
     plt.show()
 
     print(f'Population Stabilised at generation {i}')
@@ -435,7 +435,7 @@ full_calc(0.7, 0.999, 0, population_size = 1000)
 
 
     
-![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_38_0.png)
+![png](output_38_0.png)
     
 
 
@@ -475,7 +475,7 @@ full_calc(-0.7, 0, 0.9, population_size = 1000, t_max = 60, dom = 'white body', 
 
 
     
-![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_41_0.png)
+![png](output_41_0.png)
     
 
 
@@ -493,7 +493,7 @@ full_calc(0.7, 0.9, 0, population_size = 1000, t_max = 60, dom = 'black body', r
 
 
     
-![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_43_0.png)
+![png](output_43_0.png)
     
 
 
@@ -507,6 +507,113 @@ We can tell that the "beneficial" allele allows for the population to stabilise 
 If the black-bodied moths were dominant, they stabilised at the 9th generation, whereas if they were recessive, they only stabilised at the 45th generation.
 
 Further extensions to this project can be done, such as simulating codominance of these alleles where A<sub>1</sub>A<sub>2</sub> produces a grey in between rather than a definite black / white body!
+
+## Improving the function to accept multiple fitness values
+
+From our original table:
+
+| Genotype                  |Frequencies after selection|Frequencies after Normalisation|
+|---------------------------| --------- | --------------------------|
+| A<sub>1</sub>A<sub>1</sub>| $$p^2$$   |$$\frac{p^2}{p^2 + 2pq + q^2(1-s)}$$|
+| A<sub>1</sub>A<sub>2</sub>| $$2pq$$   |$$\frac{2pq}{p^2 + 2pq + q^2(1-s)}$$|
+| A<sub>2</sub>A<sub>2</sub>| $$q^2(1-s)$$|$$\frac{q^2(1-s)}{p^2 + 2pq + q^2(1-s)}$$|
+
+We assumed only A<sub>2</sub>A<sub>2</sub> and A<sub>2</sub>A<sub>2</sub> have the same fitness values. What if that is not the case? We would need to give each genotype their own fitness values:
+
+| Genotype                  |Frequencies after selection|Frequencies after Normalisation|
+|---------------------------| --------- | --------------------------|
+| A<sub>1</sub>A<sub>1</sub>| $$p^2(1-s_1)$$   |$$\frac{p^2(1-s_1)}{p^2(1-s_1) + 2pq(1-s_2) + q^2(1-s_3)}$$|
+| A<sub>1</sub>A<sub>2</sub>| $$2pq(1-s_2)$$   |$$\frac{2pq(1-s_2)}{p^2(1-s_1) + 2pq(1-s_2) + q^2(1-s_3)}$$|
+| A<sub>2</sub>A<sub>2</sub>| $$q^2(1-s_3)$$|$$\frac{q^2(1-s)}{p^2(1-s_1) + 2pq(1-s_2) + q^2(1-s_3)}$$|
+
+The function is now:
+
+
+```python
+def calculate_s3(n_pp,n_pq,n_qq,s1,s2,s3,population_size):
+    frac_p = (n_pp/population_size) + (n_pq/population_size)/2
+    frac_q = (n_qq/population_size) + (n_pq/population_size)/2
+
+    denominator = ((frac_p**2)*(1-s1)) + (2*frac_p*frac_q*(1-s2)) + ((frac_q**2)*(1-s3))
+
+    frac_qq = (frac_q**2)*(1-s3) / denominator
+    frac_pp = (frac_p**2)*(1-s1) / denominator
+    frac_pq = (frac_p*frac_q*2)*(1-s2) / denominator
+
+    n_qq = round(frac_qq*population_size)
+    n_pp = round(frac_pp*population_size)
+    n_pq = population_size-n_qq-n_pp
+    return [n_pp,n_pq,n_qq]
+
+def full_calc_3s(frac_qq, frac_pp, s1=0,s2=0,s3=0,population_size = 1000, t_max = 35):
+    if frac_qq >= 0.999:
+        frac_qq -= 0.05
+    if frac_pp >= 0.999:
+        frac_pp -= 0.05
+    n_qq = round(frac_qq*population_size)
+    n_pp = round(frac_pp*population_size)
+    n_pq = population_size-n_qq-n_pp
+
+    n_qq_list,n_pp_list,n_pq_list = [],[],[]
+
+    #Lets seed the initial populations
+    n_pp_list.append(n_pp)
+    n_pq_list.append(n_pq)
+    n_qq_list.append(n_qq)
+
+    for year in range(1,t_max):
+        n_pp,n_pq,n_qq = calculate_s3(n_pp,n_pq,n_qq,s1,s2,s3,population_size)
+
+        n_pp_list.append(n_pp)
+        n_pq_list.append(n_pq)
+        n_qq_list.append(n_qq)
+    
+    n_black = np.array(n_pp_list) + np.array(n_pq_list)
+    n_white = np.array(n_qq_list)
+    
+    return n_black, n_white
+```
+
+With our new function in tow, we are now able to simulate the environment before and during the industrial revolution. This can be done by just setting the `s` for different species.
+
+For the sake of this simulation, we are going to assume a penalty of `s = 0.7` if the background is contrasting.
+
+
+```python
+#When bg white#
+n_black1, n_white1 = full_calc_3s(0.99, 0, s1=0.7,s2=0.7,s3=0)
+
+
+#When bg black##
+n_black2, n_white2 = full_calc_3s(n_white1[-1]/1000, n_black1[-1]/1000, s1=0,s2=0,s3=0.7)
+
+#When bg white##
+n_black3, n_white3 = full_calc_3s(n_white2[-1]/1000, n_black2[-1]/1000, s1=0.7,s2=0.7,s3=0)
+
+#linking all the graphs together
+n_black_all = np.concatenate((n_black1, n_black2,n_black3))
+n_white_all = np.concatenate((n_white1, n_white2,n_white3))
+
+
+fig, ax = plt.subplots(figsize=(15,10))
+plt.plot(np.arange(0,len(n_black_all)),n_black_all, label = 'Black-bodied')
+plt.plot(np.arange(0,len(n_black_all)),n_white_all, label = 'White-bodied')
+plt.xlabel('Generations')
+plt.ylabel('Number of Moths')
+plt.title('Number of Peppered Moths per generation\ngrouped by body colour')
+plt.vlines([35,70],[-10,-10],[1010,1010], linestyle = 'dashed')
+plt.text(10,800,'Background is white')
+plt.text(45,800,'Background is black')
+plt.text(95,800,'Background is white')
+plt.legend()
+plt.show()
+```
+
+
+    
+![png](output_49_0.png)
+    
+
 
 
 ```python
