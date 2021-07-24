@@ -39,7 +39,6 @@ end
 
 ```mermaid
 graph LR
-graph LR
 start{<font size=4>Mixed data types}-->a1(<font size=4>Single num<br>Single cat) & a2(<font size=4>Single cat<br>Multiple num) & a3(<font size=4>Multiple num<br>Multiple cat)
 subgraph mixed["<font size=4>Dataset contains both numerical (num) and categorical (cat) data"]
 a1-->a1a(<font size=4>Single data point per cat)
@@ -55,7 +54,7 @@ a2c-->a2c_plot[<font size=4>Grouped Scatter Plot, Heatmap, Stacked Bar Plot]
 a3-->|<font size=4>Subcategories or<br>hierachies exist|a3b(<font size=4>How many num per subcat?)
 a3b-->|<font size=4>Single num per subcat|a2c_plot
 a3b-->|<font size=4>Multiple num per subcat|a3b2_plot[<font size=4>Box Plot, Violin Plot]
-a3--->|Independent|a3a[<font size=4>Typical graphs are not very useful]
+a3--->|<font size=4>Independent|a3a[<font size=4>Typical graphs are not very useful]
 end
 ```
 
