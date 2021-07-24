@@ -39,22 +39,23 @@ end
 
 ```mermaid
 graph LR
-start{Mixed data types}-->a1(Single num<br>Single cat) & a2(Single cat<br>Multiple num) & a3(Multiple num<br>Multiple cat)
-subgraph mixed["Dataset contains both numerical (num) and categorical (cat) data"]
-a1-->a1a(Single data point per cat)
-a1a-->a1a_plot[Box Plot, Pie Chart]
-a1-->a1b(Multiple data points per cat)
-a1b-->a1b_plot[Box Plot, Density Plot, Histogram, Violin Plot]
-a2-->a2a(Not ordered)
-a2a-->a2a_plot[Box Plot, Correlogram, Grouped Scatter Plot, Violin Plot]
-a2-->a2b(A single num variable is ordered<br>or Time series)
-a2b-->a2b_plot[Area Plot, Connected Scatter Plot, Line Plot, Stacked Area Plot]
-a2-->a2c(Single num value per cat)
-a2c-->a2c_plot[Grouped Scatter Plot, Heatmap, Stacked Bar Plot]
-a3-->|Subcategories or<br>hierachies exist|a3b(How many num per subcat?)
-a3b-->|Single num per subcat|a2c_plot
-a3b-->|Multiple num per subcat|a3b2_plot[Box Plot, Violin Plot]
-a3--->|Independent|a3a[Typical graphs are not very useful]
+graph LR
+start{<font size=4>Mixed data types}-->a1(<font size=4>Single num<br>Single cat) & a2(<font size=4>Single cat<br>Multiple num) & a3(<font size=4>Multiple num<br>Multiple cat)
+subgraph mixed["<font size=4>Dataset contains both numerical (num) and categorical (cat) data"]
+a1-->a1a(<font size=4>Single data point per cat)
+a1a-->a1a_plot[<font size=4>Box Plot, Pie Chart]
+a1-->a1b(<font size=4>Multiple data points per cat)
+a1b-->a1b_plot[<font size=4>Box Plot, Density Plot, Histogram, Violin Plot]
+a2-->a2a(<font size=4>Not ordered)
+a2a-->a2a_plot[<font size=4>Box Plot, Correlogram, Grouped Scatter Plot, Violin Plot]
+a2-->a2b(<font size=4>A single num variable is ordered<br>or Time series)
+a2b-->a2b_plot[<font size=4>Area Plot, Connected Scatter Plot, Line Plot, Stacked Area Plot]
+a2-->a2c(<font size=4>Single num value per cat)
+a2c-->a2c_plot[<font size=4>Grouped Scatter Plot, Heatmap, Stacked Bar Plot]
+a3-->|<font size=4>Subcategories or<br>hierachies exist|a3b(<font size=4>How many num per subcat?)
+a3b-->|<font size=4>Single num per subcat|a2c_plot
+a3b-->|<font size=4>Multiple num per subcat|a3b2_plot[<font size=4>Box Plot, Violin Plot]
+a3--->|Independent|a3a[<font size=4>Typical graphs are not very useful]
 end
 ```
 
