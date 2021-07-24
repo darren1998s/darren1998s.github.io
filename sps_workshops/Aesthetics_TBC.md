@@ -56,5 +56,5 @@ end
     a3b-->|Multiple num per subcat|a3b2_plot[Box Plot, Violin Plot]
     a3--->|Independent|a3a[Typical graphs are not very useful]
     end
-    ```
+```
 
