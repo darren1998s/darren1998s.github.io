@@ -306,7 +306,7 @@ plt.show()
 
 
     
-![png](output_31_0.png)
+![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_31_0.png)
     
 
 
@@ -329,7 +329,7 @@ plt.show()
 
 
     
-![png](output_33_0.png)
+![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_33_0.png)
     
 
 
@@ -368,7 +368,7 @@ print(f'White-bodied moths stabilised at {n_white[i]}')
 
 
     
-![png](output_35_0.png)
+![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_35_0.png)
     
 
 
@@ -435,7 +435,7 @@ full_calc(0.7, 0.999, 0, population_size = 1000)
 
 
     
-![png](output_38_0.png)
+![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_38_0.png)
     
 
 
@@ -475,7 +475,7 @@ full_calc(-0.7, 0, 0.9, population_size = 1000, t_max = 60, dom = 'white body', 
 
 
     
-![png](output_41_0.png)
+![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_41_0.png)
     
 
 
@@ -493,7 +493,7 @@ full_calc(0.7, 0.9, 0, population_size = 1000, t_max = 60, dom = 'black body', r
 
 
     
-![png](output_43_0.png)
+![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_43_0.png)
     
 
 
