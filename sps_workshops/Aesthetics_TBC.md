@@ -1,178 +1,60 @@
----
-sort: 3
----
+# Data Visualisation: When to use what graph?
 
-# Markdown Elements
+**Authors:** [Darren Teo](https://www.linkedin.com/in/darren-teo-3125871a1/), [Hillson Hung](https://www.linkedin.com/in/hillson-hung/)
 
-Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
+**About the Authors:** Year 3 student in NUS in Special Programme in Science, Darren and Hillson are currently majoring in Life Sciences and Physics respectively.
 
-There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.
+**About this tutorial:** Data visualisation is all about presenting your data accurately and succinctly so that your audience can see what it means. In this section we provide some quick and easy guidelines to decide what to use to represent your data. Keep in mind that what we cover are not rigid rules that you must always follow, it is just a general guideline. The most important thing is not to get caught up in all the fancy graphs and charts and to present your data such that it tells a clear story.
 
-There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.
+## Different kinds of data
 
-> There should be no margin above this first sentence.
->
-> Blockquotes should be a lighter gray with a gray border along the left side.
->
-> There should be no margin below this final sentence.
+There are three main kinds of data, exclusively numerical, exclusively categorical and a mix of the two. There are many ways to represent numerical data, depending on the number of variables and whether it is ordered in some way or other. On the other hand, exclusively categorical data is usually harder to visualise, especially when there are multiple independent categorical variables. Below is a quick flowchart for which methods of data visualisation to use for the different kinds of data.
 
-# Header 1
+### Exclusively Numerical/Categorical Data Flowchart
 
-This is a normal paragraph following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-## Header 2
-
-> This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.
-
-### Header 3
-
-```
-This is a code block following a header.
-```
-
-#### Header 4
-
-- This is an unordered list following a header.
-- This is an unordered list following a header.
-- This is an unordered list following a header.
-
-##### Header 5
-
-1. This is an ordered list following a header.
-2. This is an ordered list following a header.
-3. This is an ordered list following a header.
-
-###### Header 6
-
-| What    | Follows  |
-| ------- | -------- |
-| A table | A header |
-| A table | A header |
-| A table | A header |
-
----
-
-There's a horizontal rule above and below this.
-
----
-
-Here is an unordered list:
-
-- Salt-n-Pepa
-- Bel Biv DeVoe
-- Kid 'N Play
-
-And an ordered list:
-
-1. Michael Jackson
-2. Michael Bolton
-3. Michael Bublé
-
-And an unordered task list:
-
-- [x] Create a sample markdown document
-- [x] Add task lists to it
-- [ ] Take a vacation
-
-And a "mixed" task list:
-
-- [ ] Steal underpants
-- ?
-- [ ] Profit!
-
-And a nested list:
-
-- Jackson 5
-  - Michael
-  - Tito
-  - Jackie
-  - Marlon
-  - Jermaine
-- TMNT
-  - Leonardo
-  - Michelangelo
-  - Donatello
-  - Raphael
-
-Definition lists can be used with HTML syntax. Definition terms are bold and italic.
-
-<dl>
-    <dt>Name</dt>
-    <dd>Godzilla</dd>
-    <dt>Born</dt>
-    <dd>1952</dd>
-    <dt>Birthplace</dt>
-    <dd>Japan</dd>
-    <dt>Color</dt>
-    <dd>Green</dd>
-</dl>
-
----
-
-Tables should have bold headings and alternating shaded rows.
-
-| Artist          | Album          | Year |
-| --------------- | -------------- | ---- |
-| Michael Jackson | Thriller       | 1982 |
-| Prince          | Purple Rain    | 1984 |
-| Beastie Boys    | License to Ill | 1986 |
-
-If a table is too wide, it should condense down and/or scroll horizontally.
-
-<!-- prettier-ignore-start -->
-
-| Artist            | Album           | Year | Label       | Awards   | Songs     |
-|-------------------|-----------------|------|-------------|----------|-----------|
-| Michael Jackson   | Thriller        | 1982 | Epic Records | Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical | Wanna Be Startin' Somethin', Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life |
-| Prince            | Purple Rain     | 1984 | Warner Brothers Records | Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal | Let's Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I'm a Star, Purple Rain |
-| Beastie Boys      | License to Ill  | 1986 | Mercury Records | noawardsbutthistablecelliswide | Rhymin & Stealin, The New Style, She's Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill |
-
-<!-- prettier-ignore-end -->
-
----
-
-Code snippets like `var foo = "bar";` can be shown inline.
-
-Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
-
-Code can also be shown in a block element.
-
-```
-var foo = "bar";
+```mermaid
+graph LR
+a{Type of data}-->b1 & b2
+subgraph two[Dataset contains only categorical data]
+b2(How many variables?)--> c2a(Single variable) & c2b(Multiple variables)
+c2a--->c2a_plot[Bar Plot, Pie Chart]
+c2b--->|Independent|c2b1_plot[Typical graphs are not very useful]
+c2b--->|Subcategories or<br>hierachies exist|c2b2_plot[Bar Plot, Grouped Scatter Plot, Stacked Bar Plot]
+end
+subgraph one[Dataset contains only numerical data]
+b1(How many variables?)-->c1a(Single variable) & c1b(Two variables) & c1c(Multiple variables)
+c1c-->c1c_order(Ordered?)
+c1c_order-->|No| c1c_order_no[Box Plot, Correlogram, Heatmap, Violin Plot]
+c1c_order-->|Yes| c1b_order_yes
+c1b-->c1b_order(Ordered?)
+c1b_order-->|Yes| c1b_order_yes[Area Plot, Connected Scatter Plot, Line Plot]
+c1b_order-->|No| c1b_order_no[Box Plot, Histogram, Scatter Plot, Violin Plot]
+c1a-->c1a1(Time series?)
+c1a1-->|Yes| c1b_order_yes
+c1a1-->|No| c1a2_plot[Density Plot, Histogram]
+end
 ```
 
-Code can also use syntax highlighting.
+### Mixed Numerical and Categorical Data Flowchart
 
-```javascript
-var foo = "bar";
+```mermaid
+graph LR
+start{Mixed data types}-->a1(Single num<br>Single cat) & a2(Single cat<br>Multiple num) & a3(Multiple num<br>Multiple cat)
+subgraph mixed["Dataset contains both numerical (num) and categorical (cat) data"]
+a1-->a1a(Single data point per cat)
+a1a-->a1a_plot[Box Plot, Pie Chart]
+a1-->a1b(Multiple data points per cat)
+a1b-->a1b_plot[Box Plot, Density Plot, Histogram, Violin Plot]
+a2-->a2a(Not ordered)
+a2a-->a2a_plot[Box Plot, Correlogram, Grouped Scatter Plot, Violin Plot]
+a2-->a2b(A single num variable is ordered<br>or Time series)
+a2b-->a2b_plot[Area Plot, Connected Scatter Plot, Line Plot, Stacked Area Plot]
+a2-->a2c(Single num value per cat)
+a2c-->a2c_plot[Grouped Scatter Plot, Heatmap, Stacked Bar Plot]
+a3-->|Subcategories or<br>hierachies exist|a3b(How many num per subcat?)
+a3b-->|Single num per subcat|a2c_plot
+a3b-->|Multiple num per subcat|a3b2_plot[Box Plot, Violin Plot]
+a3--->|Independent|a3a[Typical graphs are not very useful]
+end
 ```
 
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```javascript
-var foo =
-  "The same thing is true for code with syntax highlighting. A single line of code should horizontally scroll if it is really long.";
-```
-
-Inline code inside table cells should still be distinguishable.
-
-| Language   | Code               |
-| ---------- | ------------------ |
-| Javascript | `var foo = "bar";` |
-| Ruby       | `foo = "bar"`      |
-
----
-
-Small images should be shown at their actual size.
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-Large images should always scale down and fit in the content container.
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-```
-This is the final element on the page and there should be no margin below this.
-```
