@@ -306,7 +306,7 @@ plt.show()
 
 
     
-![png](output_31_0.png)
+![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_31_0.png)
     
 
 
@@ -329,7 +329,7 @@ plt.show()
 
 
     
-![png](output_33_0.png)
+![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_33_0.png)
     
 
 
@@ -368,7 +368,7 @@ print(f'White-bodied moths stabilised at {n_white[i]}')
 
 
     
-![png](output_35_0.png)
+![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_35_0.png)
     
 
 
