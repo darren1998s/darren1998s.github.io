@@ -129,7 +129,7 @@ print(f"pp = {n_pp}, qq = {n_qq},pq = {n_pq}")
 
 ### Relaxing the selection assumption
 
-In order to simulate the environment turning black, where the black-bodied moths (A<sub>1</sub>A<sub>1</sub> and A<sub>1</sub>A<sub>2</sub>) are favored to survive over the white-bodied moths (A<sub>2</sub>A<sub>2</sub>). We would need to alter our equations a little bit.
+In order to simulate the environment turning black, where the black-bodied moths (A<sub>1</sub>A<sub>1</sub> and A<sub>1</sub>A<sub>2</sub>) are favored to survive over the white-bodied mo|ths (A<sub>2</sub>A<sub>2</sub>). We would need to alter our equations a little bit.
 
 We would need to add in a `Fitness` parameter to allow our A<sub>2</sub>A<sub>2</sub> moths to not reproduce as well as the rest. `s` is going to be a positive number, the higher `s` is the less able the white-bodied moths are able to reproduce!
 
@@ -205,7 +205,7 @@ n_pq = population_size-n_qq-n_pp
 print(f"pp = {n_pp}, qq = {n_qq},pq = {n_pq}")
 ```
 
-    pp = 10, qq = 791,pq = 199
+    pp = 5, qq = 822,pq = 173
     
 
 The above result is not quite right. If we run the code block again
@@ -306,7 +306,7 @@ plt.show()
 
 
     
-![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_31_0.png)
+![png](output_31_0.png)
     
 
 
@@ -329,7 +329,7 @@ plt.show()
 
 
     
-![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_33_0.png)
+![png](output_33_0.png)
     
 
 
@@ -368,7 +368,7 @@ print(f'White-bodied moths stabilised at {n_white[i]}')
 
 
     
-![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/sps_files/folder1/output_35_0.png)
+![png](output_35_0.png)
     
 
 
@@ -379,4 +379,136 @@ print(f'White-bodied moths stabilised at {n_white[i]}')
 
 With this project, we can see how the famous peppered moth example adadpted to change quickly. In a span of <5 generations, the black moths in the population are the majority! And in a span of 10 generations, the black-bodied moths increased from 1 to 990 and the white-bodied moths decreased from 999 to 10!
 
-Further extensions to this project can be done, such as simulating the population in the event that alleles coding for white bodies were dominant rather than recessive as seen in nature. Moreover, there could be codominance of these alleles where A<sub>1</sub>A<sub>2</sub> produces a grey in between rather than a definite black / white body!
+To make our lives easier, we can house all the code into yet another function.
+
+
+```python
+def full_calc(s, frac_qq, frac_pp, population_size = 1000, t_max = 35, dom = 'black body', recc = 'white body'):
+    n_qq = round(frac_qq*population_size)
+    n_pp = round(frac_pp*population_size)
+    n_pq = population_size-n_qq-n_pp
+
+    n_qq_list,n_pp_list,n_pq_list = [],[],[]
+
+    #Lets seed the initial populations
+    n_pp_list.append(n_pp)
+    n_pq_list.append(n_pq)
+    n_qq_list.append(n_qq)
+
+    for year in range(1,t_max):
+        n_pp,n_pq,n_qq = calculate(n_pp,n_pq,n_qq,s)
+
+        n_pp_list.append(n_pp)
+        n_pq_list.append(n_pq)
+        n_qq_list.append(n_qq)
+    
+    n_black = np.array(n_pp_list) + np.array(n_pq_list)
+    n_white = np.array(n_qq_list)
+    
+    for i in range(t_max,0,-1):
+        change = abs(n_black[i-1]-n_black[i-2])
+        if threshold < change:
+            break
+
+
+    plt.plot(np.arange(0,t_max),n_black, label = dom)
+    plt.plot(np.arange(0,t_max),n_white, label = recc)
+
+    plt.title('Number of moths per generation\ngrouped by body colour')
+    plt.ylabel('Number of moths')
+    plt.xlabel('Generations')
+    plt.legend()
+
+    #Adding vertical line
+    plt.vlines(i, 0,1000, linestyles = 'dashed')
+    plt.show()
+
+    print(f'Population Stabilised at generation {i}')
+    print(f'{dom} moths stabilised at {n_black[i]}') 
+    print(f'{recc} moths stabilised at {n_white[i]}') 
+```
+
+
+```python
+full_calc(0.7, 0.999, 0, population_size = 1000)
+```
+
+
+    
+![png](output_38_0.png)
+    
+
+
+    Population Stabilised at generation 13
+    black body moths stabilised at 986
+    white body moths stabilised at 14
+    
+
+This project assumes that the allele for black-body colour for these moths are dominant, we can further extend this project to see what would have happened if the allele for this black-body was recessive.
+
+#### Assuming the black-bodied moths are recessive in nature
+
+In our previous example, our table looked like
+
+| Genotype                  |Frequencies after selection|Frequencies after Normalisation| Body Colour |
+|---------------------------| --------- | --------------------------| ------------------------------- |
+| A<sub>1</sub>A<sub>1</sub>| $$p^2$$   |$$\frac{p^2}{1-q^2s}$$| Black |
+| A<sub>1</sub>A<sub>2</sub>| $$2pq$$   |$$\frac{2pq}{1-q^2s}$$| Black |
+| A<sub>2</sub>A<sub>2</sub>| $$q^2(1-s)$$|$$\frac{q^2(1-s)}{1-q^2s}$$| White |
+
+where `1 > s > 0` to simulate A<sub>2</sub>A<sub>2</sub> (white) being less fit than their black-bodied counterparts. How do we change this table such that A<sub>2</sub>A<sub>2</sub> and A<sub>1</sub>A<sub>2</sub> are white-bodied and A<sub>1</sub>A<sub>1</sub> are black-bodied without making huge changes?
+
+We can just assume A<sub>2</sub>A<sub>2</sub> are for black-bodied moths, A<sub>1</sub>A<sub>2</sub> and A<sub>1</sub>A<sub>1</sub> are for white-bodied moths.
+
+As a result, we can just simulate `s < 0` to show "increased chances of surviving:
+
+| Genotype                  |Frequencies after selection|Frequencies after Normalisation| Body Colour |
+|---------------------------| --------- | --------------------------| ------------------------------- |
+| A<sub>1</sub>A<sub>1</sub>| $$p^2$$   |$$\frac{p^2}{1-q^2s}$$| White |
+| A<sub>1</sub>A<sub>2</sub>| $$2pq$$   |$$\frac{2pq}{1-q^2s}$$| White |
+| A<sub>2</sub>A<sub>2</sub>| $$q^2(1-s)$$|$$\frac{q^2(1-s)}{1-q^2s}$$| Black |
+
+
+```python
+full_calc(-0.7, 0, 0.9, population_size = 1000, t_max = 60, dom = 'white body', recc = 'black body')
+```
+
+
+    
+![png](output_41_0.png)
+    
+
+
+    Population Stabilised at generation 45
+    white body moths stabilised at 5
+    black body moths stabilised at 995
+    
+
+We can compare the same params with this as compared to the other system.
+
+
+```python
+full_calc(0.7, 0.9, 0, population_size = 1000, t_max = 60, dom = 'black body', recc = 'white body')
+```
+
+
+    
+![png](output_43_0.png)
+    
+
+
+    Population Stabilised at generation 9
+    black body moths stabilised at 986
+    white body moths stabilised at 14
+    
+
+We can tell that the "beneficial" allele allows for the population to stabilise early if it is dominant in nature as compared to if it was a recessive system.
+
+If the black-bodied moths were dominant, they stabilised at the 9th generation, whereas if they were recessive, they only stabilised at the 45th generation.
+
+Further extensions to this project can be done, such as simulating codominance of these alleles where A<sub>1</sub>A<sub>2</sub> produces a grey in between rather than a definite black / white body!
+
+
+```python
+
+```
