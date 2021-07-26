@@ -16,7 +16,16 @@ This project is going to focus on simulating the famous [peppered moths example 
 
 For our example, we are going to deal with genes, more specifically alleles. Alleles can be thought of different forms of the same gene.
 
-Such as, a **gene** can affect the eye colour whereas the **alleles** for this gene can cause your eye colour to be either brown, black, blue, etc.
+Such as, a **gene** can affect the eye colour whereas the **alleles** for this gene can cause your eye colour to be either brown, black, blue, etc. The following mermaid chart might help in visualisation.
+
+```mermaid
+graph TD;
+    Gene: Eye Colour-->Allele: Blue Eye Colour;
+    Gene: Eye Colour-->Allele: Black Eye Colour;
+    Gene: Eye Colour-->Allele: Brown Eye Colour;
+    Gene: Eye Colour-->Allele: Green Eye Colour;
+```
+
 
 **Alleles** are not created equal, some can mask the effect of the other allele (_dominant_) and some can **be** masked by another alleles (_recessive_).
 
