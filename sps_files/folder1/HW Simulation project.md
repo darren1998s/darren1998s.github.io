@@ -146,7 +146,7 @@ print(f"pp = {n_pp}, qq = {n_qq},pq = {n_pq}")
     pp = 3, qq = 903,pq = 94
     
 
-### Relaxing the selection assumption
+## Implementing Fitness for One Genotype
 
 In order to simulate the environment turning black, where the black-bodied moths (A<sub>1</sub>A<sub>1</sub> and A<sub>1</sub>A<sub>2</sub>) are favored to survive over the white-bodied moths (A<sub>2</sub>A<sub>2</sub>). We would need to alter our equations a little bit.
 
@@ -482,7 +482,7 @@ full_calc(0.7, 0.999, 0, population_size = 1000)
 
 This project assumes that the allele for black-body colour for these moths are dominant, we can further extend this project to see what would have happened if the allele for this black-body was recessive.
 
-#### Assuming the black-bodied moths are recessive in nature
+## Assuming the black-bodied moths are recessive in nature
 
 In our previous example, our table looked like
 
@@ -609,6 +609,8 @@ def full_calc_3s(frac_qq, frac_pp, s1=0,s2=0,s3=0,population_size = 1000, t_max 
     
     return n_black, n_white
 ```
+
+## Simulating ever-changing background colour
 
 With our new function in tow, we are now able to simulate the environment before and during the industrial revolution. This can be done by just setting the `s` for different species.
 
