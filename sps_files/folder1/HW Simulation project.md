@@ -14,9 +14,9 @@ This project is going to focus on simulating the famous [peppered moths example 
 
 3. After the industrial revolution when the pollution was reduced, this white variant of peppered moths emerged again.
 
-For our example, we are going to deal with genes, more specifically alleles. Alleles can be thought of different forms of the same gene.
+For our example, we are going to deal with genes, more specifically alleles. Alleles can be thought of different forms of the same gene. A **single gene** can be controlled by **multiple alleles**
 
-Such as, a **gene** can affect the eye colour whereas the **alleles** for this gene can cause your eye colour to be either brown, black, blue, etc. The following mermaid chart might help in visualisation.
+Such as, a single **gene** affecting eye colour can be controlled by many **alleles** which determines your eye colour to be either brown, black, blue, etc. The following mermaid chart might help in visualisation.
 
 ```mermaid
 graph TD;
@@ -25,7 +25,6 @@ graph TD;
     A(Gene: Eye Colour)-->D(Allele: Brown Eye Colour);
     A(Gene: Eye Colour)-->E(Allele: Green Eye Colour);
 ```
-
 
 **Alleles** are not created equal, some can mask the effect of the other allele (_dominant_) and some can **be** masked by another alleles (_recessive_).
 
@@ -140,7 +139,24 @@ print(f"pp = {n_pp}, qq = {n_qq},pq = {n_pq}")
 
 In order to simulate the environment turning black, where the black-bodied moths (A<sub>1</sub>A<sub>1</sub> and A<sub>1</sub>A<sub>2</sub>) are favored to survive over the white-bodied moths (A<sub>2</sub>A<sub>2</sub>). We would need to alter our equations a little bit.
 
-We would need to add in a `Fitness` parameter to allow our A<sub>2</sub>A<sub>2</sub> moths to not reproduce as well as the rest. `s` is going to be a positive number, the higher `s` is the less able the white-bodied moths are able to reproduce!
+A table of our previous base-model Hardy-Weinberg code can be summarised like so:
+
+| Genotype                  |Frequencies|Fitness  |
+|---------------------------| --------- | ------- |
+| A<sub>1</sub>A<sub>1</sub>| $$p^2$$   |1        |
+| A<sub>1</sub>A<sub>2</sub>| $$2pq$$   |1        |
+| A<sub>2</sub>A<sub>2</sub>| $$q^2$$   |1        |
+
+As noticed, a new column called `Fitness` was added. This column represents the `relative survival / reproductive` rate of each type of moth, to simplify the equations, we can set the fitness for all moths to be 1. To incorporate `Fitness` into the equation, it can just be multiplied into the `Frequencies`:
+
+| Genotype                  |Frequencies|Fitness  |Frequencies after selection|
+|---------------------------| --------- | ------- | --------------------------|
+| A<sub>1</sub>A<sub>1</sub>| $$p^2$$   |1        |$$p^2*1$$                  |
+| A<sub>1</sub>A<sub>2</sub>| $$2pq$$   |1        |$$2pq*1$$                  |
+| A<sub>2</sub>A<sub>2</sub>| $$q^2$$   |1        |$$q^2*1$$                  |
+
+
+To allow our A<sub>2</sub>A<sub>2</sub> moths to not reproduce as well as the rest, the `Fitness` of these moths has to be lesser than the other moths! Thus, by adding a new variable called `s` (`s > 0`), the higher `s` is the less able the white-bodied moths are able to reproduce! The table now looks like this.
 
 | Genotype                  |Frequencies|Fitness  |Frequencies after selection|
 |---------------------------| --------- | ------- | --------------------------|
