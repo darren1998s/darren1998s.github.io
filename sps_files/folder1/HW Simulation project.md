@@ -67,7 +67,7 @@ With these background knowledge, this project can now be started proper
 ## Project Flow
 In this project, the following flowchart is followed:
 ```mermaid
-graph LR;
+graph TD;
     A(Base Hardy-Weinberg Model) --> B(Implementing Fitness for One Genotype)
     B(Implementing Fitness for One Genotype) --> C(Simulating recessive interation)
     B(Implementing Fitness for One Genotype) --> D(Implementing Fitness for All Genotype)
