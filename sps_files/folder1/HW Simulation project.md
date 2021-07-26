@@ -20,10 +20,10 @@ Such as, a **gene** can affect the eye colour whereas the **alleles** for this g
 
 ```mermaid
 graph TD;
-    Gene: Eye Colour-->Allele: Blue Eye Colour;
-    Gene: Eye Colour-->Allele: Black Eye Colour;
-    Gene: Eye Colour-->Allele: Brown Eye Colour;
-    Gene: Eye Colour-->Allele: Green Eye Colour;
+    A(Gene: Eye Colour)-->B(Allele: Blue Eye Colour);
+    A(Gene: Eye Colour)-->C(Allele: Black Eye Colour);
+    A(Gene: Eye Colour)-->D(Allele: Brown Eye Colour);
+    A(Gene: Eye Colour)-->E(Allele: Green Eye Colour);
 ```
 
 
