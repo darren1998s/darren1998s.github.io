@@ -1,3 +1,3 @@
-# I'm folder1
+# Matplotlib: Basic Plotting
 
-source: `{{ page.path }}`
+Add General Info here
