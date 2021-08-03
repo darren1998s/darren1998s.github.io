@@ -117,7 +117,7 @@ df['Species'].value_counts().plot(kind='bar')
 
 
     
-![png](output_3_1.png)
+![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/pandas/exploratory/output_3_1.png)
     
 
 
@@ -139,7 +139,7 @@ plt.show()
 
 
     
-![png](output_5_0.png)
+![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/pandas/exploratory/output_5_0.png)
     
 
 
@@ -224,6 +224,6 @@ plt.show()
 
 
     
-![png](output_9_0.png)
+![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/pandas/exploratory/output_9_0.png)
     
 
