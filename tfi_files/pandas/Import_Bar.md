@@ -123,6 +123,8 @@ df['Species'].value_counts().plot(kind='bar')
 
 From this Bar Chart, we can see that in our dataset, there are 50 of each species in our dataset.
 
+### Plotting average of Petal.Length
+
 What if we want to plot a bar chart plotting average `Petal.Length` for each species of _Iris_?
 
 
