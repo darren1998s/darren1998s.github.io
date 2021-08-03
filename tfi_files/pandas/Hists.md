@@ -29,7 +29,7 @@ plt.show()
 
 
     
-![png](output_3_0.png)
+![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/pandas/exploratory/output_3_0.png)
     
 
 
