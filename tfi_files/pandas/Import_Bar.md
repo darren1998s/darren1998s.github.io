@@ -228,4 +228,8 @@ plt.show()
     
 ![png](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/pandas/exploratory/output_9_0.png)
     
+From the barchart above, we can conclude many things on first glance:
 
+1. _I setosa_ has the lowest mean Petal Length, followed by _I versicolor_ then _I virginica_.
+
+2. The standard error of Petal Length for each species are extremely low, signifying very little variance within species.
