@@ -6,9 +6,13 @@ sort: 1
 
 Matplotlib is a mathematical library which allow us to bring life to data and translate them into graphs which tells us a story.
 
-The gist of the how Matplotlib can be separated into multiple different sections which will be discussed later. 
+Some of these graphs are more complex compared to others and depending on what you would like to show would imply different items.
+
+A quick flowchart that could 
 
 First, we would need to import the library into our python interpreter which allows us to utilise it:
 
-Import Matplotlib as plt
+```python
+import matplotplt as plt
+```
 
