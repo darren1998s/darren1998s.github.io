@@ -19,4 +19,5 @@ Supposed that we would like to make a plot between 2 variables, we would require
 X = [1,2,3]
 Y = [1,2,3]
 plt.plot(x,y)
+plt.show()
 ```
