@@ -31,8 +31,7 @@ Colour, Markers, Line type, sizes are what we can modify in the presented format
 ```python
 X = [1,2,3]
 Y = [1,2,3]
-fmt = '[.][--]['b']'
-plt.plot(x,y,fmt)
+plt.plot(x,y)
 plt.show()
 ```
 $$insert graph here $$
