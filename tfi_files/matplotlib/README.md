@@ -3,6 +3,7 @@ sort: 1
 ---
 
 # Matplotlib: Basic Plotting
+## Introduction to plot function of Matplotlib
 
 Matplotlib is a mathematical library which allow us to bring life to data and translate them into graphs which tells us a story.
 #insert nice graphics here #
