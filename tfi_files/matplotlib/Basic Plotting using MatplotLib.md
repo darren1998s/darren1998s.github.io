@@ -34,6 +34,8 @@ plt.plot(x,y , marker='.',linestyle='dashed',color='#008000')
 plt.show()
 ```
 ![WorkshopImage 2](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage2.png)
+
+
 The displayed graph produced has a marker style of '.', linestyle of dashed and a color of green. However, we are still not done as the illustrated diagram lacks labels,title and legend 
 ```python
 X = [1,2,3]
