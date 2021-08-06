@@ -10,6 +10,7 @@ Matplotlib is a mathematical library which allow us to bring life to data and tr
 Some of these graphs are more complex compared to others and depending on what you would like to show would imply different items.
 
 *need nice graphs here*
+
 First, we would need to import the library into our python interpreter which allows us to utilise it:
 
 ```python
