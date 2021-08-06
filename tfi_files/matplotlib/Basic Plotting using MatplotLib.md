@@ -49,4 +49,5 @@ plt.legend()
 plt.show()
 ```
 ![WorkshopImage 3](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage3.png)
+
 Take note that these parameters could be modified on a later date, to know more on what we could do to improve the aestatics, please refer to core visualistaion part of the workshop.
