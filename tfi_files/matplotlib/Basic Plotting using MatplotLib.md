@@ -6,11 +6,10 @@ sort: 1
 ## Introduction to plot function of Matplotlib
 
 Matplotlib is a mathematical library which allow us to bring life to data and translate them into graphs which tells us a story.
-#insert nice graphics here #
 
 Some of these graphs are more complex compared to others and depending on what you would like to show would imply different items.
 
-
+![WorkshopImage 1](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage1.png)
 First, we would need to import the library into our python interpreter which allows us to utilise it:
 
 ```python
@@ -23,7 +22,7 @@ Y = [1,2,3]
 plt.plot(x,y)
 plt.show()
 ```
-$$insert graph here $$
+
 
 
 We would be able to modify several parameters in code to format what would be generated. 
