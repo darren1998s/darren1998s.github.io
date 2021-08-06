@@ -547,43 +547,22 @@ Recap:
 |2021-07-12       |Phase 3 HA Groups of 5 Allowed | Relax             |
 |2021-07-22       |Phase 2 HA Day 1 | Tighten                         |
 
-Just by inspecting the rise and fall of daily cases with regards to tightening / relaxation of measures we can conclude a few things:
-
-1. The first Circuit Breaker (**Tightening**) was not effective in stopping the spread, thus a second Circuit Breaker (**Tightening**) was implemented. This helped to reduce daily cases in the coming days
+Just by inspecting the rise and fall of daily cases with regards to tightening / relaxation of measures we can summarise all of these in a table:
 
 
-2. Following the continuous reduction of daily cases, this trend continued even after Phase 1 was implemented (**Relaxation**)
+|Date (YYYY-MM-DD)|Detail of Measure|Type of Measure (Tighten / Relax)|Effects on Daily Cases (Increase / Decrease / No Change)|
+|:---------------:|:---------------:|:-------------------------------:|:-------------------------:|
+|2020-04-07       |Circuit Breaker  | Tighten                         |Increase|
+|2020-04-21       |Circuit Breaker 2| Tighten                         |Decrease|
+|2020-06-02       |Phase 1 Day 1    | Relax                           |Decrease|
+|2020-06-19       |Phase 2 Day 1    | Relax                           |Increase **THEN** Decrease|
+|2020-12-28       |Phase 3 Day 1    | Relax                           |No Change|
+|2021-05-08       |Phase 2 part 2 Day 1| Tighten                      |Increase|
+|2021-05-16       |Phase 2 HA Day 1 | Tighten                         |Decrease|
+|2021-06-14       |Phase 3 HA Day 1 | Relax                           |No Change|
+|2021-07-12       |Phase 3 HA Groups of 5 Allowed | Relax             |Increase|
+|2021-07-22       |Phase 2 HA Day 1 | Tighten                         |Decrease|
 
+From the table, five out of ten changes in COVID19 measures resulted in a decrease in daily cases. On a superficial glance, it seems that tightening or relaxation of measures does not affect daily cases.
 
-3. After Phase 2 (**Relaxation**), there was an increase in cases before dipping down to near 0.
-
-
-4. Looking at the consistent low number of cases, Phase 3 (**Relaxation**) was implemented.
-
-
-5. Due to consistent high number of daily cases in April, Phase 2 was reimplmented (**Tightening**) to help curb the growth.
-
-
-6. Due to another spike a few days after, Phase 2 HA (**Tightening**) was thus implemented to try to reduce daily cases.
-
-
-7. After a month of decreasing daily cases, Phase 3 HA was implemented (**Relaxation**).
-
-
-8. Measures were further **relaxed** in view of low number of daily cases.
-
-
-9. Consequently, this relaxation of measures was associated with a huge spike in daily cases and multiple clusters in the coming days. This prompted implementation of Phase 2 HA (**Tightening**) again.
-
-
-10. The cases after the recent Phase 2 HA dropped quite a bit.
-
-
-From this superficial analysis, we could tell that tightening of measures in Singapore were somewhat adequate in stopping the spread of COVID19.
-
-The gradual relaxation of measures in 2020 also helped in controlling the spread of COVID19 across the two years.
-
-
-```python
-
-```
+However, there are many more dimensions in this dataset such as, clusters, linked / unlinked cases / waves etc. We would not be going into all these things as they would turn this workshop in a statistics course and, we would probably be working for various govenments to analyse all the statistics ;).
