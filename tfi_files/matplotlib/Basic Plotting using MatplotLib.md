@@ -13,7 +13,7 @@ Some of these graphs are more complex compared to others and depending on what y
 First, we would need to import the library into our python interpreter which allows us to utilise it:
 
 ```python
-import matplotplt as plt
+import matplotlib.pyplot as plt
 ```
 Supposed that we would like to make a plot between 2 variables, we would required the usage of two arrays. For this example, we would have array X and Y containing three variables each. 
 ```python
