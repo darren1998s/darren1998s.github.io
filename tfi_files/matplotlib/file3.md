@@ -12,4 +12,5 @@ We will begin with the elementary plots that we can do with Mathplotlib:
 
 
 
+
 source: `{{ page.path }}`
