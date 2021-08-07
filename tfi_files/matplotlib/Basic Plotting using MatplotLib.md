@@ -83,6 +83,6 @@ ax[1].set_title('This is a title of Blue!')
 ax[1].legend()
 plt.show()
 ```
-![WorkshopImage 5] (https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage5png)
+![WorkshopImage 5](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage5.png)
 
 Take note that these aestatics could be modified easily, however it would be discussed in the core visualistaion part of the workshop.
