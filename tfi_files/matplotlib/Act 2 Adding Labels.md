@@ -35,7 +35,9 @@ y = [1,2,3]
 
 plt.plot(x,y,linewidth='4')    
 ```
-Next we would be modifying the difference between marker types and sizes
+Next we would be modifying the difference between marker types and sizes 
+![WorkshopImage 3](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage3p1.png)
+
 ```python
 #Middle Graph
 
@@ -46,10 +48,11 @@ plt.show()
 #Final Graph
 x = [1,2,3]
 y = [1,2,3]
-plt.plot(x,y,marker='.',markersize='10')       
+plt.plot(x,y,marker='+',markersize='10')       
 plt.show()
 ```
 Next we would be able to modify the color of both markers and line plot by formatting the code used.
+![WorkshopImage 4](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage4.png)
 
 
 
