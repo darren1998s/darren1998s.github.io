@@ -53,10 +53,20 @@ plt.show()
 ```
 Next we would be able to modify the color of both markers and line plot by formatting the code used.
 ![WorkshopImage 4](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage4.png)
+```
+python
+#Middle graph
+x = [1,2,3]
+y = [1,2,3]
+plt.plot(x,y, color='red')
+#Final Graph
+plt.plot(x,y,color='black',marker='.', markerfacecolor='r',markersize='10')  
+```
 
 
 
 We can adjust the range of the plot by shifting the limits imposed on the range of the diagrams
+![WorkshopImage 5](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage5.png)
 ```
 python
 x = [1,2,3]
