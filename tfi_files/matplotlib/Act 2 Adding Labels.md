@@ -20,6 +20,7 @@ First we would modify Linestyle and Line Width to illustrate the difference that
 
 Next, we would be able to see the difference by changing the Markers Types and Sizes 
 ```python
+#Second graph code
 x = [1,2,3]
 y = [1,2,3]
 plt.plot(x,y,linestyle='dashed')
@@ -28,28 +29,26 @@ plt.plot(x,y,linestyle='dashed')
  
 
 ```python
+#Third Graph Code
 x = [1,2,3]
 y = [1,2,3]
 
 plt.plot(x,y,linewidth='4')    
 ```
 Next we would be modifying the difference between marker types and sizes
-x = [1,2,3]
-y = [1,2,3]
-
-plt.plot(x,y)
-plt.show()
+```python
+#Middle Graph
 
 x = [1,2,3]
 y = [1,2,3]
 plt.plot(x,y,marker='.')
 plt.show()
-
+#Final Graph
 x = [1,2,3]
 y = [1,2,3]
 plt.plot(x,y,marker='.',markersize='10')       
 plt.show()
-
+```
 Next we would be able to modify the color of both markers and line plot by formatting the code used.
 
 
