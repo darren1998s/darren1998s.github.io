@@ -1,4 +1,7 @@
-# Other Graphical Visualisation
+---
+sort: 3
+---
+## Other Graphical Visualisation
 
 Here we would be discussing the different plot that could be done using mathplotlib.
 
