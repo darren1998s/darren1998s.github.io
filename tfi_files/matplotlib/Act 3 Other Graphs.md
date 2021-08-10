@@ -94,4 +94,23 @@ ax[2].legend()
 
 plt.show()
 ```
-source: `{{ page.path }}`
+![WorkshopImage 11](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage11.png)
+
+## Histograms and Box Plot
+To adequently showcase a continuous range of data, histograms are often used to illustrate the difference between each variable. Here, we aim to utilised the numpy function in generating random numbers between the range of 1-10 out of 5000 to illustrate a normal distribution. 
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+#generate a randomisation seed so we can replicate it 
+np.random.seed(1)
+#Generate random normal data#
+x = np.random.normal(loc = 5, size = 5000)
+fig= plt.subplots(figsize=(8,8))
+#plotting function#
+plt.hist(x, bins = 30)
+plt.xlabel('Number')
+plt.ylabel('Frequency')
+plt.show()
+```
+![WorkshopImage 13](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage13.png)
