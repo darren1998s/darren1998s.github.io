@@ -20,29 +20,7 @@ plt.show()
 ![WorkshopImage 1](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage1.png)
 ![WorkshopImage 1 part 2](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage1part2.png)
 
-We would be able to modify several parameters in code to format what would be generated. 
-Colour, Markers, Line type, sizes are what we can modify in the presented format.
-```python
-x = [1,2,3]
-y = [1,2,3]
-plt.plot(x,y , marker='.',linestyle='dashed',color='#008000')
-plt.show()
-```
-![WorkshopImage 2](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage2.png)
 
-
-The displayed graph produced has a marker style of '.', linestyle of dashed and a color of green. However, we are still not done as the illustrated diagram lacks labels,title and legend 
-```python
-x = [1,2,3]
-y = [1,2,3]
-plt.plot(x,y , marker='.',linestyle='dashed',color='#008000')
-plt.xlabel('x-axis')
-plt.ylabel('y-axis')
-plt.title('This is a title!')
-plt.legend()
-plt.show()
-```
-![WorkshopImage 3](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage3.png)
 
 Now that we have presented the idea that we can plot a graph using two arrays, we can try plotting two plots on the same graph. For illustration purposes, we will use blue and red for the diagrams. 
 ```python
