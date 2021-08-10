@@ -26,7 +26,8 @@ plt.show()
 ```
 ![WorkshopImage 8](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage8.png)
 
-##Subplots
+## Subplots
+
 However, it would be impossible to generate 2 plots on the same figure without utilizing the subplot function as the final line of code which uses plot would overwrite the previous line. Thus, we would be able to plots on the same graph.
 
 
@@ -63,6 +64,8 @@ axd.set_ylabel('Z data', color='blue')
 plt.show()
 ```
 ![WorkshopImage 10](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage10.png)
+## Scattered graphs and Bar charts
+
 Based on the graphical output that have been discussed in this section, we would be able to illustrate how other graphs would look if we were to plot them out.
 
 For the first example, we would be using scattered plot and bar graphs.
