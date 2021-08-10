@@ -13,6 +13,7 @@ The general paramaters that we could modify are namely:
 * Positons
 * Labels
 * Legends
+* Error bars
 
 First we would modify Linestyle and Line Width to illustrate the difference that one could see from the following images.
 
@@ -115,12 +116,14 @@ plt.show()
 plt.plot(x,y, color='black')
 plt.set_xlabel('x-axis of Different legend location with colored ticks')
 plt.set_ylabel('y-axis of Different legend location with colored ticks')
-plt.set_title('Different legend location with colored ticks!')
-plt.legend(['Different legend location with colored ticks'], loc='lower left')
+plt.set_title('Different legend location with colored ticks!',size)
+plt.legend(['Different legend location with colored ticks'], loc='lower left',prop={'size': 6})
 plt.tick_params(direction='in', length=6, width=2, colors='r',
                grid_color='r', grid_alpha=0.5)
 plt.show()
 ```
+
+
 we could update the parameters of the library so that the changes would be done on all graphs.
 
 
