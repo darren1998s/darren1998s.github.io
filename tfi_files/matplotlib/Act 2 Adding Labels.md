@@ -122,9 +122,31 @@ plt.tick_params(direction='in', length=6, width=2, colors='r',
                grid_color='r', grid_alpha=0.5)
 plt.show()
 ```
+Finally, we are able to modify the basic error bars on the graph, we would be able to illustrate the error propagated by the uncertainity of the value
+```python
+x = [1,2,3]
+y = [1,2,3]
+font={'family': 'cursive',
+        'color':  'black',
+        'weight': 'normal',
+        'size': 16,
+        }
+fig, ax = plt.subplots(nrows = 1, ncols = 2, figsize = (16,8))
+ax[0].plot(x,y, color='black',label='Original',)
+ax[0].set_xlabel('x-axis of original graph',fontdict=font)
+ax[0].set_ylabel('y-axis of original graph',fontdict=font)
+ax[0].set_title('This is a title of Original graph!',size=18)
+ax[0].legend()
 
 
-we could update the parameters of the library so that the changes would be done on all graphs.
-
+ax[1].plot(x,y, color='black',label='Different color and size labels')
+ax[1].set_xlabel('x-axis of graph with error bars',fontdict=font)
+ax[1].set_ylabel('y-axis of graph with error bars',fontdict=font)
+ax[1].set_title('This is a title of graph with error bars !',size=18)
+ax[1].errorbar(x,y,yerr=0.1,color='black',capsize=5,elinewidth=2,markeredgewidth=2)
+ax[1].legend()
+plt.show()
+```
+![WorkshopImage 12](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage12.png)
 
 source: `{{ page.path }}`
