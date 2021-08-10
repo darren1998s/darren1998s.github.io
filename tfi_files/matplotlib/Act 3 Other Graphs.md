@@ -43,7 +43,7 @@ ax[1].set_xlabel('x-axis of Blue')
 ax[1].set_ylabel('y-axis of Blue')
 ax[1].set_title('This is a title of Blue!')
 ax[1].legend()
-
+plt.suptitle('Title of Figure')
 plt.show()
 ```
 ![WorkshopImage 9](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage9.png)
