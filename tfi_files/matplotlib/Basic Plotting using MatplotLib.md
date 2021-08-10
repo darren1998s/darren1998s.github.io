@@ -10,7 +10,7 @@ First, we would need to import the library into our python interpreter which all
 ```python
 import matplotlib.pyplot as plt
 ```
-Supposed that we would like to make a plot between 2 variables, we would required the usage of two arrays. For this example, we would have array X and Y containing three variables each. 
+Supposed that we would like to make a plot between 2 variables, we would required the usage of two arrays. For this example, we would have array X and Y containing three variables each. The image generated on the right showcase the points generated from the arrays of the two variables which gives their cartisan co-ordinates. 
 ```python
 x = [1,2,3]
 y = [1,2,3]
