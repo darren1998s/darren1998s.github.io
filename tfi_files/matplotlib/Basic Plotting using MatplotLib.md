@@ -72,7 +72,9 @@ Y = [1,2,3]
 Z = [2,3,4]
 fig, ax = plt.subplots(nrows = 1, ncols = 2, figsize = (16,9))
 ax[0].plot(X,Y , marker='.',linestyle='dashed',color='r', label='Red')
+ax[0].errorbar(X,Y,xerr=0.1,yerr=0.1, fmt=' ',ecolor='black')#errors could be an array format as well
 ax[1].plot(X,Z , marker='.',linestyle='dashed',color='b', label='Blue')
+ax[1].errorbar(X,Z,xerr=0.1,yerr=0.1, fmt=' ',ecolor='black')
 ax[0].set_xlabel('x-axis of Red')
 ax[0].set_ylabel('y-axis of Red')
 ax[0].set_title('This is a title of Red!')
@@ -81,8 +83,10 @@ ax[1].set_xlabel('x-axis of Blue')
 ax[1].set_ylabel('y-axis of Blue')
 ax[1].set_title('This is a title of Blue!')
 ax[1].legend()
+
 plt.show()
 ```
 ![WorkshopImage 5](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage5.png)
+
 
 Take note that these aestatics could be modified easily, however it would be discussed in the core visualistaion part of the workshop.
