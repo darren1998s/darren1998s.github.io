@@ -82,6 +82,7 @@ plt.set_ylim([0,3])
 plt.show()
 ```
 next we would be modifying the graphs with their necessary labels with a legend 
+
 ```
 python
 x = [1,2,3]
@@ -99,7 +100,9 @@ plt.legend()
 
 plt.show()
 ```
-Suppose that we would like to modify the labels sizes and title sizes,
+We would be able to modify the code further to change the location and size of the legend,labels and ticks.
+![WorkshopImage 7](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage7.png)
+
 we could update the parameters of the library so that the changes would be done on all graphs.
 
 
