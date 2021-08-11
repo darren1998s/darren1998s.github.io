@@ -8,6 +8,7 @@ sort: 1
 
 We can import the dataset either by downloading the dataset or linking it straight from a source (like what we're going to do)
 
+<details>
 
 ```python
 import pandas as pd
@@ -19,6 +20,7 @@ df = pd.read_csv("https://raw.githubusercontent.com/darren1998s/darren1998s.gith
 df.head()
 ```
 
+</details>
 
 
 
