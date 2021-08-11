@@ -9,19 +9,19 @@ sort: 1
 We can import the dataset either by downloading the dataset or linking it straight from a source (like what we're going to do)
 
 <details>
-  <summary>The code Block</summary>
+  <summary>The code block</summary>
 
   This is the codeblock to do things
 
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
+  ```python
+  import pandas as pd
+  import matplotlib.pyplot as plt
 
-df = pd.read_csv("https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/iris.csv")
+  df = pd.read_csv("https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/iris.csv")
 
-#Remember df.head() shows us the first 5 rows of the dataset.
-df.head()
-```
+  #Remember df.head() shows us the first 5 rows of the dataset.
+  df.head()
+  ```
 
 </details>
 
