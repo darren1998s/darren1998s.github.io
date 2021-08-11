@@ -9,6 +9,7 @@ sort: 1
 We can import the dataset either by downloading the dataset or linking it straight from a source (like what we're going to do)
 
 <details>
+  <summary>The code Block</summary>
 
 ```python
 import pandas as pd
