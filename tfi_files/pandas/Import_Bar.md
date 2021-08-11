@@ -14,7 +14,7 @@ We can import the dataset either by downloading the dataset or linking it straig
   <p> This is the codeblock to do things </p>
 
 
-  <code>
+  <pre><code>
   
   import pandas as pd
   import matplotlib.pyplot as plt
@@ -24,7 +24,7 @@ We can import the dataset either by downloading the dataset or linking it straig
   #Remember df.head() shows us the first 5 rows of the dataset.
   df.head()
   
-  </code>
+  </code></pre>
 
 </details>
 
