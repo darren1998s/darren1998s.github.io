@@ -9,10 +9,10 @@ sort: 1
 We can import the dataset either by downloading the dataset or linking it straight from a source (like what we're going to do)
 
 <details>
-  <summary>The code block2</summary>
+  <summary>The code block3</summary>
 
   This is the codeblock to do things
-
+  <code>
   ```
   import pandas as pd
   import matplotlib.pyplot as plt
@@ -22,6 +22,7 @@ We can import the dataset either by downloading the dataset or linking it straig
   #Remember df.head() shows us the first 5 rows of the dataset.
   df.head()
   ```
+  </code>
 
 </details>
 
