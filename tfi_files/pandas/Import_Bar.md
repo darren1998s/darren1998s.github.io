@@ -8,35 +8,18 @@ sort: 1
 
 We can import the dataset either by downloading the dataset or linking it straight from a source (like what we're going to do)
 
-<details>
-  <summary>The code block5</summary>
 
-  <p> This is the codeblock to do things </p>
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
 
+df = pd.read_csv("https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/iris.csv")
 
-  <pre><code>
-  
-  import pandas as pd
-  import matplotlib.pyplot as plt
-
-  df = pd.read_csv("https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/iris.csv")
-
-  #Remember df.head() shows us the first 5 rows of the dataset.
-  df.head()
-  
-  </code></pre>
-
-</details>
+#Remember df.head() shows us the first 5 rows of the dataset.
+df.head()
+```
 
 
-1. First item with a hidden code block
-<details>
-  <summary>Example</summary>
-
-  ```
-  long console output here
-  ```
-</details>
 
 
 <div>
