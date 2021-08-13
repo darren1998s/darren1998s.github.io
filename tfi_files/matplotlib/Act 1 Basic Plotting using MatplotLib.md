@@ -24,6 +24,14 @@ plt.show()
 ```
 ![WorkshopImage3](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/workshop3.png)
 
-Take note that these aestatics could be modified easily, however it would be discussed in the core visualistaion part of the workshop.
-
+Next, we would try to plot two different plots on the same graph.
+```python
+X = [1,2,3]
+Y = [4,2,0]
+Z = [6,2,4]
+plt.plot(X,Y, marker='*',markersize=12,linestyle='dashed',linewidth =1,color='#ff0000')
+plt.plot(X,Z,marker='.',markersize=10,linestyle='-',linewidth =1,color='#00ff00'
+plt.show()
+```
+![WorkshopImage4](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/workshop4.png)
 
