@@ -2,85 +2,28 @@
 sort: 2
 ---
 
-## Adding labels
+## Adding labels to the graph to give meaning to plot 
 
 Adding onto the introduction, we would be able to add labels and modify basic aestatics on the plot as it is being generated from python. 
 The general paramaters that we could modify are namely:
-* Line Width
-* Line Style
-* Markers Type
-* Marker Size
-* Positons
 * Labels
 * Legends
 * Error bars
 
-First we would modify Linestyle and Line Width to illustrate the difference that one could see from the following images.
-
-![WorkshopImage 2](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage2.png)
-
-Next, we would be able to see the difference by changing the Markers Types and Sizes 
-```python
-#Second graph code
-x = [1,2,3]
-y = [1,2,3]
-plt.plot(x,y,linestyle='dashed')
-
-```
- 
+First we would add Title and axis labels with Legend onto the previous graphs generated from section 1.
 
 ```python
-#Third Graph Code
-x = [1,2,3]
-y = [1,2,3]
-
-plt.plot(x,y,linewidth='4')    
-```
-Next we would be modifying the difference between marker types and sizes 
-![WorkshopImage 3](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage3p1.png)
-
-```python
-#Middle Graph
-
-x = [1,2,3]
-y = [1,2,3]
-plt.plot(x,y,marker='.')
-plt.show()
-#Final Graph
-x = [1,2,3]
-y = [1,2,3]
-plt.plot(x,y,marker='+',markersize='10')       
+X = [1,2,3]
+Y = [4,2,0]
+plt.plot(X,Y, marker='.',linestyle='dashed',color='r',label='plot')
+plt.xlabel('x-axis of plot')
+plt.ylabel('y-axis of plot')
+plt.title('Title of Plot')
+plt.legend()
 plt.show()
 ```
-Next we would be able to modify the color of both markers and line plot by formatting the code used.
-![WorkshopImage 4](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage4.png)
-```
-python
-#Middle graph
-x = [1,2,3]
-y = [1,2,3]
-plt.plot(x,y, color='red')
-#Final Graph
-plt.plot(x,y,color='black',marker='.', markerfacecolor='r',markersize='10')  
-```
+![WorkshopImage4](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/workshop4.png) 
 
-
-
-We can adjust the range of the plot by shifting the limits imposed on the range of the diagrams
-![WorkshopImage 5](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage5.png)
-```python
-x = [1,2,3]
-y = [1,2,3]
-
-plt.plot(x,y,color='black')
-plt.show()
-
-
-plt.plot(x,y,color='black')
-plt.set_xlim([0,3])
-plt.set_ylim([0,3])
-plt.show()
-```
 next we would be modifying the graphs with their necessary labels with a legend 
 ![WorkshopImage 6](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/WorkshopImage6.png)
 
