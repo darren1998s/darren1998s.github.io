@@ -23,6 +23,7 @@ plt.plot(X,Y , marker='*',markersize=12,linestyle='dashed',linewidth =5,color='#
 plt.show()
 ```
 ![WorkshopImage3](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/workshop3.png)
+
 Take note that these aestatics could be modified easily, however it would be discussed in the core visualistaion part of the workshop.
 
 
