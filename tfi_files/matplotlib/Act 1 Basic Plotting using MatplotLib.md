@@ -10,10 +10,9 @@ Now that we have presented the idea that we can plot with elements of basic aest
 ```python
 X = [1,2,3]
 Y = [4,2,0]
-plt.plot(X,Y , marker='.',linestyle='dashed',color='r')
+plt.plot(X,Y, marker='.',linestyle='dashed',color='r')
 plt.show()
 ```
 ![WorkshopImage2](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/workshop2.png)
-
 
 Take note that these aestatics could be modified easily, however it would be discussed in the core visualistaion part of the workshop.
