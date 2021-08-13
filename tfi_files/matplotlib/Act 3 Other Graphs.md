@@ -6,7 +6,6 @@ sort: 3
 Here we would be exploring how one would be able to plot two graphs side by side independent of one another.
 First, we would be able to generate two different plots on the same graph by plotting twice on the same graph.
 
-
 ```python
 X = [1,2,3]
 Y = [1,2,3]
