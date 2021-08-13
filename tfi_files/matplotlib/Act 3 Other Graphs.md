@@ -24,7 +24,7 @@ In a single plot, one would only need to utilise plt.xlabel,plt.ylabel and plt.t
 X = [1,2,3]
 Y = [1,2,3]
 Z = [1,2,3]
-fig, ax = plt.subplots(nrows = 1, ncols = 2, figsize = (16,9))
+fig, ax = plt.subplots(nrows = 1, ncols = 2)
 ax[0].plot(X,Y , marker='.',linestyle='dashed',color='r', label='Red')
 ax[1].plot(X,Z , marker='.',linestyle='dashed',color='b', label='Blue')
 ax[0].set_xlabel('x-axis of Red')
@@ -50,15 +50,15 @@ Z = [1,2,3]
 fig, ax = plt.subplots(nrows = 1, ncols = 2,constrained_layout=True,figsize=(16,9))
 ax[0].plot(X,Y , marker='.',linestyle='dashed',color='r', label='Red')
 ax[1].plot(X,Z , marker='.',linestyle='dashed',color='b', label='Blue')
-ax[0].set_xlabel('x-axis of Red')
-ax[0].set_ylabel('y-axis of Red')
-ax[0].set_title('This is a title of Red!')
+ax[0].set_xlabel('x-axis of Red',fontsize=18)
+ax[0].set_ylabel('y-axis of Red',fontsize=18)
+ax[0].set_title('This is a title of Red!',fontsize=24)
 ax[0].legend()
-ax[1].set_xlabel('x-axis of Blue')
-ax[1].set_ylabel('y-axis of Blue')
-ax[1].set_title('This is a title of Blue!')
+ax[1].set_xlabel('x-axis of Blue',fontsize=18)
+ax[1].set_ylabel('y-axis of Blue',fontsize=18)
+ax[1].set_title('This is a title of Blue!',fontsize=24)
 ax[1].legend()
-plt.suptitle('Title of Figure')
+plt.suptitle('Title of Figure',fontsize=36)
 plt.show()
 ```
 ![WorkshopImage10](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/workshop10.png)
