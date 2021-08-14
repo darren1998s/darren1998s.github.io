@@ -149,7 +149,7 @@ However, most barcharts, while counting averages, needs to have standard error. 
 
 Recall that standard error is the formula:
 
-$$se = \frac{sd}{\sqrt{n}}$$
+$$se = \frac{\sigma}{\sqrt{n}}$$
 
 sd = `np.std` and we can get `n` with `.count()`.
 
