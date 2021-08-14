@@ -42,8 +42,8 @@ In this section, we would explore adding error bars for the plot to showcase the
 ```python
 X = [1,2,3]
 Y = [4,2,0]
-plt.plot(X,Y, marker='.',linestyle='dashed',color='r',label='plot')
-plt.errorbar(X,Y,yerr=1,xerr=0.5, marker =' ',linestyle=' ')
+plt.plot(X,Y, marker='.',linestyle='dashed',color='black',label='plot')
+plt.errorbar(X,Y,yerr=0.1,color='black',capsize=5,elinewidth=2,markeredgewidth=2)
 plt.xlabel('x-axis of plot', fontsize=4)
 plt.ylabel('y-axis of plot',fontsize=8)
 plt.title('Title of Plot',fontsize=12)
