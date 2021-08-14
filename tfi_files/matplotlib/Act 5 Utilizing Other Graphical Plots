@@ -22,7 +22,7 @@ ax[1].set_ylabel('y-axis of scattered graph')
 ax[1].set_title('This is a title of scattered graph!')
 ax[1].legend()
 ```
+![WorkshopImage13](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/workshop13.png)
 
 
-
-![WorkshopImage14](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/workshop14.png)
+source: `{{ page.path }}`
