@@ -1,6 +1,8 @@
 ---
 sort: 5
 ---
+## Utilizing Other Graphical Plot
+### Bars charts and Scatter Plots
 Here we would explore how one would be able to plot scatter graphs, histograms and bar charts.
 
 For the first example, we would utilise code in the Act 1 where we plot 2 array against one another using standard plot function and simulated it in a scatter graph and a bar graph
@@ -28,6 +30,8 @@ plt.show()
 ```
 ![WorkshopImage13](https://raw.githubusercontent.com/darren1998s/darren1998s.github.io/main/assets/images/tfi/basics%20plt/workshop13.png)
 
+### Histograms
+Next we can plot histograms using same function
 
 
 source: `{{ page.path }}`
