@@ -1,7 +1,7 @@
-
 ---
 sort: 5
 ---
+
 ## Utilizing Other Graphical Plot
 ### Bars charts and Scatter Plots
 
