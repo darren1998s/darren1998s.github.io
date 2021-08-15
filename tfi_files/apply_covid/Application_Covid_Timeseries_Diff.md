@@ -583,6 +583,180 @@ asean_daily_df
 <p>559 rows × 9 columns</p>
 </div>
 
+> Edit on 15th August 2021, I found out that there is a function called `pd.diff()` which does this exact thing. I will now demonstrate it
+
+```python
+# Yes thats it...
+asean_daily_diff = asean_t.diff().iloc[1:,]
+asean_daily_diff
+```
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Brunei_difference</th>
+      <th>Cambodia_difference</th>
+      <th>Indonesia_difference</th>
+      <th>Laos_difference</th>
+      <th>Malaysia_difference</th>
+      <th>Burma_difference</th>
+      <th>Philippines_difference</th>
+      <th>Singapore_difference</th>
+      <th>Vietnam_difference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1/23/20</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <td>1/24/20</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>1/25/20</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>1/26/20</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>1/27/20</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <td>7/30/21</td>
+      <td>3.0</td>
+      <td>668.0</td>
+      <td>41168.0</td>
+      <td>244.0</td>
+      <td>16840.0</td>
+      <td>5127.0</td>
+      <td>8537.0</td>
+      <td>139.0</td>
+      <td>7717.0</td>
+    </tr>
+    <tr>
+      <td>7/31/21</td>
+      <td>1.0</td>
+      <td>658.0</td>
+      <td>37284.0</td>
+      <td>380.0</td>
+      <td>17786.0</td>
+      <td>4725.0</td>
+      <td>8141.0</td>
+      <td>120.0</td>
+      <td>8938.0</td>
+    </tr>
+    <tr>
+      <td>8/1/21</td>
+      <td>0.0</td>
+      <td>671.0</td>
+      <td>30738.0</td>
+      <td>267.0</td>
+      <td>17150.0</td>
+      <td>3480.0</td>
+      <td>8724.0</td>
+      <td>121.0</td>
+      <td>7447.0</td>
+    </tr>
+    <tr>
+      <td>8/2/21</td>
+      <td>1.0</td>
+      <td>560.0</td>
+      <td>22404.0</td>
+      <td>199.0</td>
+      <td>15764.0</td>
+      <td>3689.0</td>
+      <td>8073.0</td>
+      <td>111.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>8/3/21</td>
+      <td>0.0</td>
+      <td>577.0</td>
+      <td>33900.0</td>
+      <td>250.0</td>
+      <td>17105.0</td>
+      <td>4713.0</td>
+      <td>6779.0</td>
+      <td>102.0</td>
+      <td>16954.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>559 rows × 9 columns</p>
+</div>
 
 
 ## Plotting Daily Cases for each country
