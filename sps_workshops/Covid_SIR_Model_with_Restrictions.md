@@ -24,13 +24,15 @@ However, coupled equations are difficult to solve analytically in general. Lucki
 
 In the basic SIR model, we would need to have three classes of people: susceptible people who can get infected, infected people who can spread the disease to susceptible people, and recovered people who would not be infected & infect susceptible people again. We can define these classes of people by just putting them into variables S, I and R respectively.
 
-![SIR model](sir.png)
+![SIR model](https://www.lewuathe.com/assets/img/posts/2020-03-11-covid-19-dynamics-with-sir-model/sir.png)
 (image taken from: https://www.lewuathe.com/covid-19-dynamics-with-sir-model.html)
 
 Among these classes, they will have a function in which will change over time depending on how many people from each classes there are. Thus, the basic SIR model can be represented using the following equations
 
 $$ \frac{dS}{dt} = - \frac{\beta S I}{N} , $$
+
 $$ \frac{dI}{dt} =  \frac{\beta S I}{N} - \gamma I , $$ 
+
 $$ \frac{dR}{dt} = \gamma I . $$
 
 We will now go through what each equation means.
