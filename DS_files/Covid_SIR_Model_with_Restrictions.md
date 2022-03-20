@@ -1,5 +1,5 @@
 ---
-sort: 5
+sort: 2
 ---
 # SIR (Susceptible, Infected, Recovered) Model with mask wearing)
 

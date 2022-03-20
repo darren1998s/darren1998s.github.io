@@ -1,5 +1,5 @@
 ---
-sort: 4
+sort: 3
 ---
 
 # Quantitative Model of Honey Bee Colony Population Dynamics
