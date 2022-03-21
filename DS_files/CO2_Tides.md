@@ -61,3 +61,16 @@ $$CO_2 = 0.534*Humidity - 11.046*I(Low Tide)$$
 This indicated that for every 1% increase in `Humidity`, it would result in an average increase of 0.534ppm in $$CO_2$$ level and that the $$CO_2$$ level would be 11.046ppm higher during high tide than low tide on average, assuming the same relative humidity.
 
 This positive correlation between `Humidity` and $$CO_2$$ level may be because humidity is indicative of the amount of water that has evaporated from the nearby water sources. A higher humidity will result in less water to contain dissolved $$CO_2$$, which in turn increases the amount of dissolved $$CO_2$$ being released into the air.
+
+The correlation between tide types and $$CO_2$$ level suggests that the water body at Labrador Nature Reserve Coastal Trail is a carbon source. This is in line with data provided by observatories that analyse temperature of water bodies around the globe. Warm water acts as a carbon source and cold-water acts as a carbon sink. Singapore, situated along the equator, is naturally surrounded by warm water. During high tide, warm water flows throughout the Malayan Peninsula and there will be a surge in the amount of carbon sources at Labrador Nature Reserve Coastal Trail, causing a rise in $$CO_2$$ levels.
+
+# Conclusion
+
+Our study suggested that tide types are significant in influencing $$CO_2$$ levels at Labrador Nature Reserve. This is attributed to the waters surrounding Singapore being carbon sources. Hence, high water levels (high tide) contributed to a rise in $$CO_2$$ levels and low water levels (low tide) contributed to a decrease in $$CO_2$$ levels. Furthermore, relative humidity was found to be positively correlated with atmospheric $$CO_2$$ levels. Overall, this study is a promising springboard for more comprehensive research on the indirect and direct influence of tidal waves on carbon emission at coastal areas. Coupled with other studieds, meaningful insights can be revealed for the conservation of coastal areas.
+
+# Areas of Improvement
+
+Our final model only had an $$R^2$$ value of 0.329, suggsting that only 32.9% of the observed variances seen in $$CO_2$$ is explained by the model and the other 67.1% are unexplained. In order to improve the $R^2$ values, known variable that affect $$CO_2$$ such as water temperature, dissolved $$CO_2$$ and salinity could have been measured to obtain a model with more explanatory power. A linear mixed effect model could also have been conducted to account for the pseudo-replication as the same route was taken for all measurements, just at different times.
+
+Moreover, $$CO_2$$ levels could have been measured at East Coast Park so that accurate water levels could have been used as a continuous explanatory response variable. This would allow for a greater understanding of the relationship between $$CO_2$$ levels, tidal levels and relative humidity.
+
