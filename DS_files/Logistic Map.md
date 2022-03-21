@@ -11,31 +11,31 @@ sort: 1
 
 ## Introduction
 
-When looking at organisms in the wild, we often have to build models in order to make predictions about changes in their population[$^{[1]}$](#References). Many different factors can drive changes in the population of organisms. In this example, we will be considering the effects of finite resources on the growth of the number of rabbits or crabs in a toy model
+When looking at organisms in the wild, we often have to build models in order to make predictions about changes in their population[$$^{[1]}$$](#References). Many different factors can drive changes in the population of organisms. In this example, we will be considering the effects of finite resources on the growth of the number of rabbits or crabs in a toy model
 
-This entire project is going to explore a simple mathematical equation and how it can give insights into ecological systems. Such mathematical equations are often referred to as models. There are two types of models in mathematical biology, a discrete time model and continuous time model[$^{[2]}$](#References). For the purposes of this project, we are only going to be looking at discrete time models.
+This entire project is going to explore a simple mathematical equation and how it can give insights into ecological systems. Such mathematical equations are often referred to as models. There are two types of models in mathematical biology, a discrete time model and continuous time model[$$^{[2]}$$](#References). For the purposes of this project, we are only going to be looking at discrete time models.
 
 ### Discrete Time model
 
 A discrete time model is essentially a model that has time at set intervals. You can think of this as the model having a finite number of data points starting from the initial time to some final time taking steps of some time interval. For example, if we choose a time interval is 1 second, there will be a data point at 1 second, then the next at 2 seconds, but not at 1.5 seconds.
 
-Oftentimes, discrete time models use something called a difference equation[$^{[3]}$](#References) (not to be confused with its mathematical older brother, differential equations) which have this form (assuming $A_t$ is a certain species population at time $t$):
+Oftentimes, discrete time models use something called a difference equation[$$^{[3]}$$](#References) (not to be confused with its mathematical older brother, differential equations) which have this form (assuming $$A_t$$ is a certain species population at time $$t$$):
 
 $$A_{t+1} = kA_t$$
 
-Where the species population at time $t+1$ is directly affected by the species population at time $t$.
+Where the species population at time $$t+1$$ is directly affected by the species population at time $$t$$.
 
 ## Why it is important to study this?
 
 Mathematical models that predict biological systems will give us insights and predictions on future systems. Assuming we are an employee of NParks, and we would want to predict if a certain environmental measure is helping with improving the ecosystem. We would then have a mathematical model of how certain species of animals are growing and see if various populations of species would die out.
 
-An example of this would be the tree types and populations in Singapore mangroves affecting the population of Tree-climbing crabs (_Episesarma spp._). Studying these crabs are particularly important because they recycle carbon on the mangrove floors and aid in decomposition, which makes them a keystone species[$^{[4]}$](#References). The loss of habitat could result in potential threat to them[$^{[5]}$](#References), which would be really bad!
+An example of this would be the tree types and populations in Singapore mangroves affecting the population of Tree-climbing crabs (_Episesarma spp._). Studying these crabs are particularly important because they recycle carbon on the mangrove floors and aid in decomposition, which makes them a keystone species[$$^{[4]}$$](#References). The loss of habitat could result in potential threat to them[$$^{[5]}$$](#References), which would be really bad!
 
 
 ## Fibonacci Model
 
 So let's take a look at a very simple model first.
-A simple model is the Fibonacci rabbit problem[$^{[6]}$](#Reference). Assuming a population of adult rabbits, $A$, juvenile rabbits, $J$ at time, $t$, where it follows this formula: $$A_{t+1} = J_{t} + A_t$$
+A simple model is the Fibonacci rabbit problem[$$^{[6]}$$](#Reference). Assuming a population of adult rabbits, $$A$$, juvenile rabbits, $$J$$ at time, $$t$$, where it follows this formula: $$A_{t+1} = J_{t} + A_t$$
 
 This is because the number of adult rabbits is governed by how many adult rabbits there are and number of juvenile rabbits that will mature to become adult rabbits. However, the number of juvenile rabbits are also governed by how many adult rabbits there are too!
 
@@ -87,8 +87,8 @@ Now that we have the results from the model, we can plot them using `ts` as our 
 
 ```python
 plt.plot(ts, As,'o-')
-plt.xlabel('$t$', size = 20)
-plt.ylabel('$A_t$', size = 20)
+plt.xlabel('$$t$$', size = 20)
+plt.ylabel('$$A_t$$', size = 20)
 plt.show()
 ```
 
@@ -148,7 +148,7 @@ So what is going on here?
 
 Every biological system has limited resources (carrying capacity `K`) such as limited space and food sources. Hence the population of species in every environment would be limited in some way! Thus, we would need to introduce it in some way.
 
-I would not go into the details as to how this model came about[$^{[7]}$](#References), just... magic. Let `N` be the number of individuals and `r` to be a reproductive rate.
+I would not go into the details as to how this model came about[$$^{[7]}$$](#References), just... magic. Let `N` be the number of individuals and `r` to be a reproductive rate.
 
 $$N_{t+1} = \left(1+r\left(1-\frac{N_t}{K}\right)\right)N_t$$
 
@@ -168,8 +168,8 @@ Ns = simulate_func(density_dependence, max_t)
 ts = np.arange(0,max_t)
 
 plt.plot(ts, Ns,'o-')
-plt.xlabel('$t$', size = 20)
-plt.ylabel('$N_t$', size = 20)
+plt.xlabel('$$t$$', size = 20)
+plt.ylabel('$$N_t$$', size = 20)
 plt.show()
 ```
 
@@ -195,8 +195,8 @@ plt.plot(ts, Ns,'o-', label = 'Density Dependence')
 plt.plot(ts, As,'o-', label = 'Fibonacci Problem')
 
 plt.ylim(0,300)
-plt.xlabel('$t$', size = 20)
-plt.ylabel('$N_t$ or $A_t$', size = 20)
+plt.xlabel('$$t$$', size = 20)
+plt.ylabel('$$N_t$$ or $$A_t$$', size = 20)
 plt.legend()
 plt.show()
 ```
@@ -227,8 +227,8 @@ Ns = simulate_func(density_dependence_perturb, max_t)
 ts = np.arange(0,max_t)
 
 plt.plot(ts, Ns,'o-')
-plt.xlabel('$t$', size = 20)
-plt.ylabel('$N_t$', size = 20)
+plt.xlabel('$$t$$', size = 20)
+plt.ylabel('$$N_t$$', size = 20)
 plt.show()
 ```
 
@@ -242,7 +242,7 @@ This is interesting. It seems like if we introduce a change in population (pertu
 
 The previous model: $$N_{t+1} = \left(1+r\left(1-\frac{N_t}{K}\right)\right)N_t$$
 
-We can get rid of both `K` and `r` by doing cool math and replace them with `a`. This is important because it makes the analysis simpler as we went from a model with two parameter to a model with one[$^{[8]}$](#References)!
+We can get rid of both `K` and `r` by doing cool math and replace them with `a`. This is important because it makes the analysis simpler as we went from a model with two parameter to a model with one[$$^{[8]}$$](#References)!
 
 $$x_t = \frac{r}{1+r}\frac{N_t}{K}, a = 1+r$$
 
@@ -250,7 +250,7 @@ And thus:
 
 $$x_{t+1} = ax_t(1-x_t)$$
 
-An important thing about this model is that the maximum number $x$ can be is `1.0` and thus the population of crabs now is a PROPORTION of the carrying capacity ($K$) instead of an absolute number.
+An important thing about this model is that the maximum number $$x$$ can be is `1.0` and thus the population of crabs now is a PROPORTION of the carrying capacity ($$K$$) instead of an absolute number.
 
 
 ```python
@@ -265,8 +265,8 @@ xs = simulate_func(log_map, max_t, A0 = 0.01)
 ts = np.arange(0,max_t)
 
 plt.plot(ts, xs,'o-')
-plt.xlabel('$t$', size = 20)
-plt.ylabel('$x_t$',size = 20)
+plt.xlabel('$$t$$', size = 20)
+plt.ylabel('$$x_t$$',size = 20)
 plt.show()
 ```
 
@@ -284,8 +284,8 @@ xs = simulate_func(log_map, max_t, A0 = 0.01)
 ts = np.arange(0,max_t)
 
 plt.plot(ts, xs,'o-')
-plt.xlabel('$t$', size = 20)
-plt.ylabel('$x_t$',size = 20)
+plt.xlabel('$$t$$', size = 20)
+plt.ylabel('$$x_t$$',size = 20)
 plt.show()
 ```
 
@@ -311,8 +311,8 @@ xs = simulate_func(log_map, max_t, A0 = 0.01)
 ts = np.arange(0,max_t)
 
 plt.plot(ts, xs,'o-')
-plt.xlabel('$t$', size = 20)
-plt.ylabel('$x_t$',size = 20)
+plt.xlabel('$$t$$', size = 20)
+plt.ylabel('$$x_t$$',size = 20)
 plt.show()
 ```
 
@@ -325,8 +325,8 @@ At `a = 3.1` it seems that the system will exhibit some sort of cyclical behavio
 
 ```python
 plt.plot(ts, xs,'o-')
-plt.xlabel('$t$', size = 20)
-plt.ylabel('$x_t$',size = 20)
+plt.xlabel('$$t$$', size = 20)
+plt.ylabel('$$x_t$$',size = 20)
 
 # Setting Limits
 plt.xlim(50,70)
@@ -359,8 +359,8 @@ xs = simulate_func(log_map, max_t, A0 = 0.01)
 ts = np.arange(0,max_t)
 
 plt.plot(ts, xs,'o-')
-plt.xlabel('$t$', size = 20)
-plt.ylabel('$x_t$',size = 20)
+plt.xlabel('$$t$$', size = 20)
+plt.ylabel('$$x_t$$',size = 20)
 
 # Setting Limits
 plt.xlim(50,70)
@@ -395,8 +395,8 @@ xs = simulate_func(log_map, max_t, A0 = 0.01)
 ts = np.arange(0,max_t)
 
 plt.plot(ts, xs,'o-')
-plt.xlabel('$t$', size = 20)
-plt.ylabel('$x_t$',size = 20)
+plt.xlabel('$$t$$', size = 20)
+plt.ylabel('$$x_t$$',size = 20)
 
 # Lines 
 plt.hlines([0.8312549282779312, 0.8124735248492181], 
@@ -456,8 +456,8 @@ for i in range(len(a_s)):
     xs = simulate_func(log_map, max_t, A0 = 0.01)
     all_xs.append(xs)
     axes[i].plot(ts, xs, 'o-')
-    axes[i].set_xlabel('$t$', size = 20)
-    axes[i].set_ylabel('$x_t$',size = 20)
+    axes[i].set_xlabel('$$t$$', size = 20)
+    axes[i].set_ylabel('$$x_t$$',size = 20)
     axes[i].set_title(f'a: {a}', size = 15)
 
 plt.tight_layout()
@@ -483,8 +483,8 @@ for i in range(len(a_s)):
     axes[i].plot(ts, xs, 'o-', label = 'A0 = 0.0101')
     axes[i].plot(ts, all_xs[i], 'o-', label = 'A0 = 0.01')
     axes[i].legend()
-    axes[i].set_xlabel('$t$', size = 20)
-    axes[i].set_ylabel('$x_t$',size = 20)
+    axes[i].set_xlabel('$$t$$', size = 20)
+    axes[i].set_ylabel('$$x_t$$',size = 20)
     axes[i].set_title(f'a: {a}', size = 15)
 
 plt.tight_layout()
@@ -533,11 +533,11 @@ for a in all_as:
 
 plt.figure(figsize = (12,12))
 plt.plot(all_as, all_xs, '.', markersize = 1)
-plt.xlabel('$a$', size = 25)
-plt.ylabel(r'$\bar N$', size = 25)
+plt.xlabel('$$a$$', size = 25)
+plt.ylabel(r'$$\bar N$$', size = 25)
 plt.xticks(size = 15)
 plt.yticks(size = 15)
-plt.title(r'Bifurcation plot of $\bar N$ vs $a$', size = 30)
+plt.title(r'Bifurcation plot of $$\bar N$$ vs $$a$$', size = 30)
 plt.show()
 ```
 
