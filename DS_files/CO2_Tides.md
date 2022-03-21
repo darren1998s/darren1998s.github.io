@@ -2,7 +2,7 @@
 sort: 4
 ---
 
-# Data Analysis on $CO_2$ levels against Tide levels at Labrador Park Costal Trail
+# Data Analysis on $$CO_2$$ levels against Tide levels at Labrador Park Costal Trail
 **Author**: [Darren Teo](https://www.linkedin.com/in/darren-teo-3125871a1/)
 
 **About the Author**: Year 3 student in National University of Singapore (NUS) in Special Programme in Science
@@ -28,12 +28,11 @@ A Raspberry Pi with K30 10,000ppm $$CO_2$$ sensor and Adafruit BME280 I2C or SPI
 
 # Data Analysis
 
-Since the response variable (#$CO_2$#) is continuous and the explanatory variables are both categorical (High, Low tide levels) and continuous (Temperature, Humidity and Air Pressure, an analysis of covariance (ANCOVA) was performed to determine the significance of the differences in mean $#CO_2$# readings.
+Since the response variable ($$CO_2$$) is continuous and the explanatory variables are both categorical (High, Low tide levels) and continuous (Temperature, Humidity and Air Pressure, an analysis of covariance (ANCOVA) was performed to determine the significance of the differences in mean $$CO_2$$ readings.
 
 However, before anything, exploratory plots can be used to infer some key points first before analysis.
 
 All analysis is done in R version 4.1.2.
-## Boxplot
 
 
-
+## Boxplots
