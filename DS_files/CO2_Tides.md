@@ -48,3 +48,16 @@ Under the ANCOVA framework, multicollinearity tests were conducted and revealed 
 
 ![validity](https://github.com/darren1998s/darren1998s.github.io/blob/main/assets/images/CO2Tides/diag.png?raw=true)
 *Both plots check for the model's assumptions and validity. (Left) The Residuals vs Fitted plot checks for homoscedasticity where the errors are independent. The variance of residuals does not seem to change as fitted values increase, thus confirming homoscedasticity. (Right) The Q-Q plot checks for the normality of the residuals, and in conjunction with Shapiro-Wilk's test (p > 0.05), the residuals are normally distributed.*
+
+A scatter plot of the various data points were plotted, together with the predicted model fitted values, separated by tide levels in the figure below.
+
+![model](https://github.com/darren1998s/darren1998s.github.io/blob/main/assets/images/CO2Tides/CO2VSHumid.png?raw=true)
+*After correcting for multicollinearity, the model with the lowest AIC score was accepted with the equation $$CO_2$$ = 0.5304*`Humidity` + 432.842 - 11.046*I(`Tide` = low), $$R^2$$ = 0.329. The ANCOVA model predicts that $$CO_2$$ levels at high tides are highter than low tides assuming the same relative `Humidity`, possibily indicating that the water body is a carbon source. It is important to note that the gradients for $$CO_2$$ levels at both tides could be different, however it exhibited multicollinearity issues and thus had to be removed from the equation.*
+
+Our final model indicated that the relative humidity of the environment is positively correlated with the atmospheric $$CO_2$$ levels regardless of tide levels and the system can be described with the linear equation:
+
+$$CO_2 = 0.534*Humidity - 11.046*I(Low Tide)$$
+
+This indicated that for every 1% increase in `Humidity`, it would result in an average increase of 0.534ppm in $$CO_2$$ level and that the $$CO_2$$ level would be 11.046ppm higher during high tide than low tide on average, assuming the same relative humidity.
+
+This positive correlation between `Humidity` and $$CO_2$$ level may be because humidity is indicative of the amount of water that has evaporated from the nearby water sources. A higher humidity will result in less water to contain dissolved $$CO_2$$, which in turn increases the amount of dissolved $$CO_2$$ being released into the air.
