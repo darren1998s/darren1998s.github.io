@@ -37,19 +37,19 @@ $$ \frac{dR}{dt} = \gamma I . $$
 
 We will now go through what each equation means.
 
-### Change in 'Susceptible' over time, $\frac{dS}{dt}$
+### Change in 'Susceptible' over time, $$\frac{dS}{dt}$$
 
 The change in susceptible over time will always decrease over time in the event of an epidemic / endemic. This is because in our simple model, people would not be _susceptible_ again after being infected. As a result, the overall "sign" for susceptible people will be negative. You can also think of this as "how are the people are leaving the susceptible class and entering other classes".
 
-The rest of the term $\frac{\beta}{N}SI$, the $\frac{\beta}{N}$ represents transmission rate of the virus per person and the rate of transmission is impacted by the number of $I$ (infected) and $S$ (susceptible).
+The rest of the term $$\frac{\beta}{N}SI$$, the $$\frac{\beta}{N}$$ represents transmission rate of the virus per person and the rate of transmission is impacted by the number of $$I$$ (infected) and $$S$$ (susceptible).
 
-### Change in 'Infected' over time, $\frac{dI}{dt}$
-As with $\frac{dS}{dt}$, the people entering infected class is modelled by the people leaving the $S$ class only. Thus the same term appears as a positive now!
+### Change in 'Infected' over time, $$\frac{dI}{dt}$$
+As with $$\frac{dS}{dt}$$, the people entering infected class is modelled by the people leaving the $$S$$ class only. Thus the same term appears as a positive now!
 
-And the people leaving the infected class is now modelled by the people recovering from the disease which is $\gamma I$ where $\gamma$ is the recovery rate in ($days^{-1}$).
+And the people leaving the infected class is now modelled by the people recovering from the disease which is $$\gamma I$$ where $$\gamma$$ is the recovery rate in ($$days^{-1}$$).
 
-### Change in 'Recovered' over time, $\frac{dR}{dt}$
-As with $\frac{dI}{dt}$, the people entering recovered class is modelled by the people leaving the $I$ class only. Thus the same term appears as a positive now!
+### Change in 'Recovered' over time, $$\frac{dR}{dt}$$
+As with $$\frac{dI}{dt}$$, the people entering recovered class is modelled by the people leaving the $$I$$ class only. Thus the same term appears as a positive now!
 
 And since everyone would stay recovered, there would be no one leaving this infected class.
 
@@ -59,11 +59,11 @@ With all these equations in place, we are able to model what happens if a singul
 
 | Variable | Number |
 |:--------:|:------:|
-|   $S_0$  |   99   |
-|   $I_0$  |    1   |
-|   $R_0$  |    0   |
-|  $\beta$ |    0.5   |
-| $\gamma$ |   0.07  |
+|   $$S_0$$  |   99   |
+|   $$I_0$$  |    1   |
+|   $$R_0$$  |    0   |
+|  $$\beta$$ |    0.5   |
+| $$\gamma$$ |   0.07  |
 
 
 ```python
@@ -140,7 +140,7 @@ plt.show()
 
 ### Changing our Model Equations
 
-In order to add a term to our model to represent efficacy of wearing masks, we can just add a multiplier of $\alpha_m$ to our transmission term to get $\frac{\alpha_m \beta  S I}{N}$. $\alpha_m$ is a value from 0 to 1, with mask wearing being 100% effective in stopping the spread of the disease ($\alpha_m = 0$) and the inverse is true as well ($\alpha_m = 1$). This gives us a new set of equations:
+In order to add a term to our model to represent efficacy of wearing masks, we can just add a multiplier of $$\alpha_m$$ to our transmission term to get $$\frac{\alpha_m \beta  S I}{N}$$. $$\alpha_m$$ is a value from 0 to 1, with mask wearing being 100% effective in stopping the spread of the disease ($$\alpha_m = 0$$) and the inverse is true as well ($$\alpha_m = 1$$). This gives us a new set of equations:
 
 $$ \frac{dS}{dt} = - \frac{\alpha_m \beta  S I}{N} , $$ 
 $$ \frac{dI}{dt} =  \frac{\alpha_m \beta S I}{N} - \gamma I, $$ 
@@ -152,7 +152,7 @@ Let's say that we have a pandemic which we will call 'Divoc-91' and that in hope
 
 Furthermore, wearing masks are not 100% effective and not everyone wears their mask (if they do, some are wearing them inappropriately). So how do we model this behaviour? Thankfully, someone already did a study and found that mask wearing are 79% effective (https://www.pnas.org/content/118/4/e2014564118).
 
-Since masks are 79% more effective, we would estimate our $\alpha_m$ to be 21%.
+Since masks are 79% more effective, we would estimate our $$\alpha_m$$ to be 21%.
 
 
 ```python
