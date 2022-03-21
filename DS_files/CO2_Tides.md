@@ -35,4 +35,16 @@ However, before anything, exploratory plots can be used to infer some key points
 All analysis is done in R version 4.1.2.
 
 
-## Boxplots
+## Results & Discussion
+
+A boxplot of $$CO_2$$ levels against tide levels was done (below).
+
+![co2vsTide](https://github.com/darren1998s/darren1998s.github.io/blob/main/assets/images/CO2Tides/CO2VSTide.png?raw=true)
+*Boxplot figure of $$CO_2$$ levels (ppm) against high and low tides. The blackdots in both boxplots represent the mean whereas the horizontal line represents the median. The mean $$CO_2$$ for high tide is 459.1ppm, whereas it is 449.7ppm for low tides. First quartile for high tides is 469.5ppm compared to 456.8ppm for low tides and lastly, third quartile of high tides was 480.5ppm as compared to the 464.3ppm of low tides. In order to determine the significance of the differences in two $$CO_2$$ levels, further analysis needs to be performed*
+
+This data indicated that the park had a mean $$CO_2$$ level of 459.1ppm during high tides compared to the 449.7ppm during low tides. The interquartile range of the $$CO_2$$ levels are 469.5 - 480.5 ppm for high tide and 456.8 - 464.3 ppm for low tide. However, based of the boxplots alone, we are unable to elaborate on the significance of the two means on a deeper level. In order to investigate the underlying correlations between variables that can explain for the difference in means, the data needs to be further studied using ANCOVA.
+
+Under the ANCOVA framework, multicollinearity tests were conducted and revealed that the interaction term between `Humidity` and `Tide` had VIF scores of >3. Furthermore, main effects `Temperature` and `Pressure` also had VIF scores of >3. This implied that `Humidity` and `Temperature` are linearly correlated with the other explanatory variables present in the model and would then increase the uncertainty of coefficients of the model. Multiple models were compared where no multicollinearity issues were seen using AIC and the model with the lowest AIC was selected. Our final model only had explanatory variables of `Humidity` and `Tide` with the lowest AIC. The model was confirmed to be valid as it exhibited homoscedasticity and normaality of its residual from the plot below.
+
+![validity](https://github.com/darren1998s/darren1998s.github.io/blob/main/assets/images/CO2Tides/diag.png?raw=true)
+*Both plots check for the model's assumptions and validity. (Left) The Residuals vs Fitted plot checks for homoscedasticity where the errors are independent. The variance of residuals does not seem to change as fitted values increase, thus confirming homoscedasticity. (Right) The Q-Q plot checks for the normality of the residuals, and in conjunction with Shapiro-Wilk's test (p > 0.05), the residuals are normally distributed.*
