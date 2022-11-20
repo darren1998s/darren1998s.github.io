@@ -21,7 +21,7 @@ Identification of cell types present in a biological sample is a vital part of s
 The dataset used in this particular report / project is GSE100866 obtained from Gene Expression Omnibus (GEO) by (Stoeckius et al., 2017). The dataset contains data from CBMC (cord blood mononuclear cells) and 2,000 genes were sequenced. The raw counts were obtained from GEO and the reads were normalized, scaled using `Seurat`.
 
 ## Autoencoder foundation
-![autoencoder_foundation](autoencoder_figs/Autoencoder_archi_.png)
+![autoencoder_foundation](autoencoder_figs/Autoencoder_archi.png)
 
 The model I used was 2 hidden layers with each successive layer containing four times less nodes than the previous. The bottleneck layer contains 64 nodes. Because the autoencoder is an unsupervised clustering machine learning task, `train_test_split()` was not needed and the entire dataset was used to train.
 
